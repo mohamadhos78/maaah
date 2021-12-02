@@ -44,7 +44,7 @@
 }
 .Heading a{
   color: white;
-  font-family: "IRANSansWeb";
+  font-family: "Vazir";
 }
 .Heading a:hover{
   text-decoration: none;
@@ -66,8 +66,7 @@
   font-size:15px;
 }
 .Online-class:hover{
-  font-family: "IRANSansWeb";
-  
+  font-family: "Vazir";
   font-size:15px;
   
 }
@@ -82,7 +81,7 @@
   transition: .5ms;
 }
 .Attention{
-  font-family: "IRANSansWeb";
+  font-family: "Vazir";
   font-size: small;
   font-weight: bold;
 }
@@ -115,7 +114,7 @@
   background: transparent;
 }
 .Description{
-  font-family: "IRANSansWeb";
+  font-family: "Vazir";
   color: black;
   font-size: small;
   font-weight: bold;
@@ -127,7 +126,7 @@ h5{
 }
 .modal-content{
  border-radius: 5px;
- font-family: "IRANSansWeb";
+ font-family: "Vazir";
  color: black;
  font-weight: bold;
  background-color: #e0f7ffe8;
@@ -147,11 +146,10 @@ h5{
 
 }
 .modal-title label {
-  font-family: "IRANSansWeb";
-
+  font-family: "Vazir";
 }
 .text-footer{
-  font-family: "IRANSansWeb";
+  font-family: "Vazir";
 }
 .footer-img{
   width: 2em;
@@ -205,7 +203,7 @@ border-radius:30%;
   background: #37a2a714;
 }
 .talk-text{
-  font-family: "IRANSansWeb";
+  font-family: "Vazir";
   font-size: medium;
   font-weight: 900;
 }
