@@ -1,37 +1,19 @@
+
+@import url("//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)");
 @font-face {
-    font-family: "Vazir";
-    src: url("../fonts/Vazir.eot");
-    src: url("../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
-      url("../fonts/Vazir.woff2") format("woff2"),
-      url("../fonts/Vazir.woff") format("woff"),
-      url("../fonts/Vazir.ttf") format("truetype");
-  
-  }
-  @font-face{
-      font-family: "Btitr";
-      src:url(../fonts/BTITRBD.eot) format('eot'),
-      url(../fonts/BTITRBD.woff) format('woff'),
-      url(../fonts/BTITRBD.ttf) format('truetype');
-  }
-  @font-face{
-      font-family: "Bkoodak";
-      src:url(../fonts/BKOODB.eot) format('eot'),
-          url(../fonts/BKOODB.woff) format('woff'),
-          url(../fonts/BKOODB.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: "IRANSansWeb";
-    src: url(../fonts/IRANSansWeb.eot) format('eot'),
-       url(../fonts/IRANSansWeb.woff) format("woff"),   
-       url(../fonts/IRANSansWeb.ttf) format("ttf");
-  
-}
+  font-family: "IRANSansWeb(FaNum)";
+   src: url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.eot"); 
+   src: url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.eot?#iefix") format("embedded-opentype"),
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.woff2") format("woff2"), 
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.woff") format("woff"),
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.ttf") format("truetype"),
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.svg#IRANSansWeb(FaNum)") format("svg"); }
+
   body {
-  
     text-align: right !important;
     line-height: 1.6;
     background: rgb(252 254 255);
-
+    font-family: "IRANSansWeb(FaNum)" !important;
   }
   *{
     padding: 0;
@@ -51,8 +33,7 @@
   border-radius:25px;
   background-color: #ffffffe6;
   border: 1px solid #002856;
-  font-family: "IRANSansWeb";
- 
+  
 }
 #home {
   height:450px;
@@ -113,7 +94,6 @@ display: none;
     padding:10px;
     margin-right: 3px;
     color:black;
-    font-family: "IRANSansWeb";
     float: center;
     font-size: small;
     font-weight: bold;
@@ -162,7 +142,6 @@ display: none;
   #banner-par{
     width:55%;
     line-height:25.5px;
-    font-family: "IRANSansWeb";
     font-weight: bold;
   }
  
@@ -179,7 +158,6 @@ display: none;
     background-color: #002856;
     border-radius: 10px;
     font-size: small;
-    font-family: "IRANSansWeb";
     color: #fcf117;
   }
   @media only screen and (max-width:661px) {
@@ -192,7 +170,6 @@ display: none;
   .reports-text{
     font-weight: bold;
     font-size: small;
-    font-family: "IRANSansWeb";
   }
   .News{
   
@@ -208,7 +185,6 @@ display: none;
     border-radius: 10px;
     font-size: small;
     color: #fcf117;
-    font-family: "IRANSansWeb";
   }
   #banner{
     margin-top: 3%;
@@ -575,7 +551,6 @@ video{
   }
  .text-footer{
   font-size: small;
-  font-family: "IRANSansWeb";
   color: white;
  }
   @media (min-width: 768px) and (max-width: 991px) {

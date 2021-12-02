@@ -1,159 +1,129 @@
+@import url("//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)");
 @font-face {
-  font-family: "Vazir";
-  src: url("../fonts/Vazir.eot");
-  src: url("../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/Vazir.woff2") format("woff2"),
-    url("../fonts/Vazir.woff") format("woff"),
-    url("../fonts/Vazir.ttf") format("truetype");
+  font-family: "IRANSansWeb(FaNum)";
+   src: url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.eot"); 
+   src: url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.eot?#iefix") format("embedded-opentype"),
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.woff2") format("woff2"), 
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.woff") format("woff"),
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.ttf") format("truetype"),
+   url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.svg#IRANSansWeb(FaNum)") format("svg"); }
 
-}
-@font-face{
-    font-family: "Btitr";
-    src:url(../fonts/BTITRBD.eot) format('eot'),
-    url(../fonts/BTITRBD.woff) format('woff'),
-    url(../fonts/BTITRBD.ttf) format('truetype');
-}
-@font-face{
-    font-family: "Bkoodak";
-    src:url(../fonts/BKOODB.eot) format('eot'),
-        url(../fonts/BKOODB.woff) format('woff'),
-        url(../fonts/BKOODB.ttf) format('truetype');
-}
-@font-face {
-  font-family: "IRANSansWeb";
-  src: url(../fonts/IRANSansWeb.eot) format('eot'),
-     url(../fonts/IRANSansWeb.woff) format("woff"),   
-     url(../fonts/IRANSansWeb.ttf) format("ttf");
-
-}
-body {
-
-  text-align: right !important;
-  line-height: 1.6;
-  background: rgb(252 254 255);
-
-}
-*{
-  padding: 0;
-  margin: 0;
-}
+  body {
+    text-align: right !important;
+    line-height: 1.6;
+    background: rgb(252 254 255);
+    font-family: "IRANSansWeb(FaNum)" !important;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+  }
 .Heading {
-  background-color: #01537e;
-  border: 1px solid #C9C917;
-  border-radius:15px;
+    background-color: #01537e;
+    border: 1px solid #C9C917;
+    border-radius:15px;
 }
 .Heading a{
-color: white;
-font-family: "IRANSansWeb";
+  color: white;
+ 
 }
 .Heading a:hover{
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color: white;
 }
 .meetings{
-font-family: "Btitr";
-color: white;
-font-size:15px;
+ 
+  color: white;
+  font-size:15px;
 }
 .meetings:hover{
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color: white;
 
 }
 .Online-class{
-font-family: "Btitr";
-color: white;
-font-size:15px;
+    color: white;
+  font-size:15px;
 }
 .Online-class:hover{
-font-family: "IRANSansWeb";
-font-size:15px;
-
+  font-size:15px;
+  
 }
 .Heading-meetings{
-background-color: rgb(0 53 97);
+  background-color: rgb(0 53 97);
 }
 .Online-class-box:hover{
-background-color: rgb(19, 0, 128);
+  background-color: rgb(19, 0, 128);
 }
 .Online-class-box:hover{
-background-color: green;
-transition: .5ms;
+  background-color: green;
+  transition: .5ms;
 }
 .Attention{
-font-family: "IRANSansWeb";
-font-size: small;
-font-weight: bold;
+  font-size: small;
+  font-weight: bold;
 }
 .main{
-height: 100%;
-background-color:#adb5bd;
-border-radius:20px;
+  height: 100%;
+  background-color:#adb5bd;
+  border-radius:20px;
 }
 .main1{
-background-color: #dae0e5;
-border-radius:50px;
+  background-color: #dae0e5;
+  border-radius:50px;
 }
 .card{
-background-color:transparent;
-border: none;
+  background-color:transparent;
+  border: none;
 }
 .img{
-width:50%;
-
-border-radius: 15px;
+  width:50%;
+ 
+  border-radius: 15px;
 }
 .description{
-
-border-radius:15px;
+ 
+  border-radius:15px;
 }
 .card-header{
-background: transparent;
+  background: transparent;
 }
 .card-footer{
-background: transparent;
+  background: transparent;
 }
 .Description{
-font-family: "IRANSansWeb";
-color: black;
-font-size: small;
-font-weight: bold;
+ 
+  color: black;
+  font-size: small;
+  font-weight: bold;
 }
 h5{
-font-size: small;
-font-family: "Btitr";
-color: black;
+  font-size: small;
+  color: black;
 }
 .modal-content{
-border-radius: 5px;
-font-family: "IRANSansWeb";
-color: black;
-font-weight: bold;
-background-color: #e0f7ffe8;
+ border-radius: 5px;
+ color: black;
+ font-weight: bold;
+ background-color: #e0f7ffe8;
 }
 #button-email{
-background-color:#C9C917;
-border-radius:15px;
-border: 1px solid #C9C917;
+  background-color:#C9C917;
+  border-radius:15px;
+  border: 1px solid #C9C917;
 }
 #button-email:hover{
-background-color:#a3a304;
-border-radius:15px;
-border: 1px solid #C9C917;
+  background-color:#a3a304;
+  border-radius:15px;
+  border: 1px solid #C9C917;
 }
 .form-group input{
-  border-radius: 10px;
+    border-radius: 10px;
 
 }
-.modal-title label {
-font-family: "IRANSansWeb";
-}
-.text-footer{
-font-family: "IRANSansWeb";
-}
 .footer-img{
-width: 2em;
-height: 2em;
+  width: 2em;
+  height: 2em;
 }
 .footer-img:hover{
 box-shadow: 1px 1px 3px 1px #db7b76;
@@ -161,70 +131,69 @@ border-radius:30%;
 }
 
 .darker {
-border-color: #ccc;
-background-color: rgb(221, 221, 221);
-border-radius: 10px;
+  border-color: #ccc;
+  background-color: rgb(221, 221, 221);
+  border-radius: 10px;
 }
 
 .container::after {
-content: "";
-clear: both;
-display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .container img {
-float: left;
-max-width: 60px;
-width: 100%;
-margin-right: 20px;
-border-radius: 50%;
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
 }
 
 .container img.right {
-float: right;
-margin-left: 20px;
-margin-right:0;
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
 }
 
 .time-right {
-float: right;
-color: #aaa;
+  float: right;
+  color: #aaa;
 }
 
 .time-left {
-float: left;
-color: #999;
+  float: left;
+  color: #999;
 }
 .Your-talk{
-margin-right:10%;
-width: 80%;
-border-radius: 15px;
-border: 3px solid #003a6699;
-background: #37a2a714;
+  margin-right:10%;
+  width: 80%;
+  border-radius: 15px;
+  border: 3px solid #003a6699;
+  background: #37a2a714;
 }
 .talk-text{
-font-family: "IRANSansWeb";
-font-size: medium;
-font-weight: 900;
+  font-size: medium;
+  font-weight: 900;
 }
 button>a{
-text-decoration: none;
+  text-decoration: none;
 }
 @media (max-width: 991px) {
 
-.main1{
-
-border-radius:90px;
+ .main1{
+  
+  border-radius:90px;
 }
 .video{
-  width: 80%;
-  height: 80%;
-  border-radius: 20px;
-
- }
- audio{
-  width: 80%;
-  height: 80%;
-  border-radius: 20px;
-}
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+ 
+   }
+   audio{
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+  }
 }
