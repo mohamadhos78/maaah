@@ -38,10 +38,10 @@
                    
                       <ul class="navbar-nav mt-1">
                           <li class="nav-item item-align-center">
-                              <a class="nav-link  > " href="#home"> خانه </a>
+                              <a class="nav-link  > " href={% url 'index' %}> خانه </a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link >" href="" data-toggle="modal" data-target="#supportmyModal"> ویژه مربیان </a>
+                              <a class="nav-link >" href={% url 'teacher' %} data-toggle="modal" data-target="#supportmyModal"> ویژه مربیان </a>
                               <div class="modal fade text-muted " id="supportmyModal">
                                   <div class="modal-dialog">
                                     <div class="modal-dialog">
@@ -76,7 +76,7 @@
                               </div>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link > " href="eshghology.html"> عشقولوژی </a>
+                              <a class="nav-link > " href={% url 'eshghology' %}> عشقولوژی </a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModal"> درباره ماه </a>
@@ -101,7 +101,7 @@
                               </div>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModall">  حرف دل </a>
+                              <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  حرف دل </a>
                                <!--modal_email-->
                               <div class="modal fade text-muted " id="supportModall">
                               <div class="modal-dialog">
@@ -139,7 +139,7 @@
                             <!--endmodal-->
                           </li>
                           <li class="nav-item ">
-                              <a class="nav-link border2>" href="Your_talk.html"> دلگویه های شما </a>
+                              <a class="nav-link border2>" href={% url 'your_talks' %} > دلگویه های شما </a>
                           </li>
                       
                       </ul>

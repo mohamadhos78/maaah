@@ -1,23 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="fa" dir="rtl">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href={% static "css/bootstrap.min.css"%}>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+<<<<<<< HEAD
         <link href="//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="./css/landing.css"/>
         <link rel="stylesheet" href="./css/style.css"/>
         <script src="js/jquery-3.5.1.js"></script>
+=======
+        <link rel="stylesheet" href={% static "./css/landing.css"%}/>
+        <link rel="stylesheet" href={% static "./css/style.css"%}/>
+        <script src={% static "js/jquery-3.5.1.js"%}></script>
+>>>>>>> 75c3b05f051ad6ef49832cfd49ba07739ef5265b
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="./js/script.js"></script>
+        <script src={% static "js/bootstrap.min.js"%}></script>
+        <script src={% static "./js/script.js"%}></script>
         
-        <link href="./img/logo.png" rel="shortcut icon" />
+        <link href={% static "./img/logo.png"%} rel="shortcut icon" />
         <title>عشقولوژی|جلسه 1</title>  
     </head>
     <body>
@@ -38,10 +45,10 @@
                
                   <ul class="navbar-nav mt-1">
                       <li class="nav-item item-align-center">
-                          <a class="nav-link  > " href="landing.html"> خانه </a>
+                          <a class="nav-link  > " href={% url 'index' %}> خانه </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link >" href="" data-toggle="modal" data-target="#supportmyModal"> ویژه مربیان </a>
+                        <a class="nav-link >" href={% url 'teacher' %} data-toggle="modal" data-target="#supportmyModal"> ویژه مربیان </a>
                         <div class="modal fade text-muted " id="supportmyModal">
                             <div class="modal-dialog">
                               <div class="modal-dialog">
@@ -76,7 +83,7 @@
                         </div>
                     </li>
                       <li class="nav-item">
-                          <a class="nav-link > " href="#"> عشقولوژی </a>
+                          <a class="nav-link > " href={% url 'eshghology' %}> عشقولوژی </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModal"> درباره ماه </a>
@@ -99,7 +106,7 @@
                         </div>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModall">  حرف دل </a>
+                          <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  حرف دل </a>
                            <!--modal_email-->
                           <div class="modal fade text-muted " id="supportModall">
                           <div class="modal-dialog">
@@ -136,7 +143,7 @@
                         <!--endmodal-->
                       </li>
                       <li class="nav-item ">
-                          <a class="nav-link border2>" href="Your_talk.html"> دلگویه های شما </a>
+                          <a class="nav-link border2>" href={% url 'your_talks' %}> دلگویه های شما </a>
                       </li>
                   
                   </ul>
@@ -240,7 +247,7 @@
                       </div>
                       <div class="card-body ">
                         <audio controls  >
-                          <source src="video/16.mp4" type="video/mp4">
+                          <source src={% static "video/16.mp4"%} type="video/mp4">
                         </audio>
                       </div>
                       <div class="card-footer text-white">
@@ -265,14 +272,14 @@
                           <p class="text-white text-footer mt-5">ما را در شبکه های اجتماعی دنبال کنید.</p>
                           <div class="d-flex justify-content-center mt-3">
                             <div class="p-2">
-                            <a href="https://eitaa.com/noore_maaah"><img class="footer-img" src="./img/eita.png" alt="ایتا"></a>
+                            <a href="https://eitaa.com/noore_maaah"><img class="footer-img" src={% static "./img/eita.png"%} alt="ایتا"></a>
                             </div>
                             <div class="p-2">
-                              <a href="https://telegram.com/noore_maaah"><img class="footer-img" src="./img/telegram.png" alt="ایتا"></a>
+                              <a href="https://telegram.com/noore_maaah"><img class="footer-img" src={% static "./img/telegram.png"%} alt="ایتا"></a>
                               </div>
                               
                             <div class="p-2">
-                              <a href="https://instagram.com/maaah_313 "><img class="footer-img" src="./img/insta.png" alt="اینستاگرام"></i></a>
+                              <a href="https://instagram.com/maaah_313 "><img class="footer-img" src={% static "./img/insta.png"%} alt="اینستاگرام"></i></a>
                               </div>                  
                           </div>
                       </div>
