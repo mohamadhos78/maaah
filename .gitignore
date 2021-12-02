@@ -1,2 +1,5 @@
 venv/
 staticfiles/
+*.pyc
+*.log
+maaah/__pycache__/*
