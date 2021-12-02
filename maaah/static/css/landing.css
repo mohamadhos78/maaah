@@ -55,18 +55,37 @@
  
 }
 #home {
-    height:450px;
-    background:#002856 url(../img/n3.jpg) no-repeat center bottom/cover;
-    box-shadow: 4px 3px 4px 5px black;
+  height:450px;
+  background:#002856 url('/static/img/n1.jpg') no-repeat center bottom/cover;
+  box-shadow: 4px 3px 4px 5px black;
+}
+.month{
+display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  #home {  
+    background:#002856 url('/static/img/n3.jpg') no-repeat  bottom/cover;
+   
   }
-
-@media only screen and (max-width: 414px) {
-    #home {  
-      background:#002856 url(../img/n-1.jpg) no-repeat center bottom/cover;
-     
-    }
+  .month{
+    display: block;
+    color: white;
+    font-family: "Btitr";
+    font-size: xx-large;
+    margin-top:15%;
+    margin-left: 15%;
+  }
+} 
+@media only screen and (max-width: 991px) {
+  #home {  
+    background:#002856 url('/static/img/n-1.jpg') no-repeat  bottom/cover;
+   
+  }
+  .month{
+    display: none;
   } 
-
+} 
   #mainNav .navbar-toggler {
     font-size: 80%;
     padding: 0.75rem;
@@ -94,7 +113,7 @@
     padding:10px;
     margin-right: 3px;
     color:black;
-    font-family: "Vazir";
+    font-family: "IRANSansWeb";
     float: center;
     font-size: small;
     font-weight: bold;
@@ -143,7 +162,7 @@
   #banner-par{
     width:55%;
     line-height:25.5px;
-    font-family: "Vazir";
+    font-family: "IRANSansWeb";
     font-weight: bold;
   }
  
@@ -160,7 +179,7 @@
     background-color: #002856;
     border-radius: 10px;
     font-size: small;
-    font-family: "Vazir";
+    font-family: "IRANSansWeb";
     color: #fcf117;
   }
   @media only screen and (max-width:661px) {
@@ -173,7 +192,7 @@
   .reports-text{
     font-weight: bold;
     font-size: small;
-    font-family: "Vazir";
+    font-family: "IRANSansWeb";
   }
   .News{
   
@@ -189,7 +208,7 @@
     border-radius: 10px;
     font-size: small;
     color: #fcf117;
-    
+    font-family: "IRANSansWeb";
   }
   #banner{
     margin-top: 3%;
@@ -556,7 +575,7 @@ video{
   }
  .text-footer{
   font-size: small;
-  font-family: "Vazir";
+  font-family: "IRANSansWeb";
   color: white;
  }
   @media (min-width: 768px) and (max-width: 991px) {
