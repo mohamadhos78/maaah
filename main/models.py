@@ -18,12 +18,19 @@ class Session(models.Model):
     video = models.FileField(upload_to="sessions/video", null=True, blank=True)
     voice = models.FileField(upload_to="sessions/voice", null=True, blank=True)
 
+    def __str__(self):
+        return self.title
+    
 
 class Talk(models.Model):
     email = models.CharField(max_length=50, null=True)
     name = models.CharField(max_length=64, null=False, blank=False)
     talk = models.TextField(null=False, blank=False)
-
+    date = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+    
 
 class Teacher(models.Model):
     username = models.CharField(max_length=64, null=False, blank=False)
@@ -32,15 +39,23 @@ class Teacher(models.Model):
 
 
 class Report(models.Model):
-    description = models.TextField()
-    img = models.FileField(upload_to="reports/img")
-    video = models.FileField(upload_to="reports/video")
-    voice = models.FileField(upload_to="reports/voice/")
+    title = models.CharField(max_length=64, null=False, blank=False, default="بدون توضیحات")
+    description = models.TextField(null=False, blank=False)
+    img = models.FileField(upload_to="reports/img", null=False, blank=False)
+    video = models.FileField(upload_to="reports/video", null=True, blank=True)
+    voice = models.FileField(upload_to="reports/voice", null=True, blank=True)
 
+    def __str__(self):
+        return self.title
+    
 
 class News(models.Model):
     img = models.FileField(upload_to="news/img", null=False, blank=False)
+    text = models.CharField(max_length=128, null=False, blank=False, default="بدون توضیحات")
 
+    def __str__(self):
+        return self.text
+    
     class Meta:
         verbose_name = 'News'
         verbose_name_plural = 'News'
