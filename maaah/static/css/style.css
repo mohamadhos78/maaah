@@ -23,13 +23,16 @@
     border: 1px solid #C9C917;
     border-radius:15px;
 }
+.Heading:hover{
+  box-shadow: 2px 2px 2px black;
+}
 .Heading a{
   color: white;
- 
 }
 .Heading a:hover{
   text-decoration: none;
-  color: white;
+  color: rgb(196, 248, 196);
+  
 }
 .meetings{
  
@@ -52,6 +55,7 @@
 .Heading-meetings{
   background-color: rgb(0 53 97);
 }
+
 .Online-class-box:hover{
   background-color: rgb(19, 0, 128);
 }
@@ -71,10 +75,15 @@
 .main1{
   background-color: #dae0e5;
   border-radius:50px;
+  box-shadow: 4px 4px 4px black;
+}
+.main1:hover{
+  box-shadow: 9px 7px 7px black;
 }
 .card{
   background-color:transparent;
   border: none;
+  
 }
 .img{
   width:50%;
@@ -111,6 +120,7 @@ h5{
   background-color:#C9C917;
   border-radius:15px;
   border: 1px solid #C9C917;
+  box-shadow: 6px 5px 3px black;
 }
 #button-email:hover{
   background-color:#a3a304;
@@ -171,6 +181,12 @@ border-radius:30%;
   border-radius: 15px;
   border: 3px solid #003a6699;
   background: #37a2a714;
+  box-shadow: 8px 8px 4px black
+}
+.your-talks{
+  border: 2px solid;
+  border-radius: 20px;
+  box-shadow: 4px 4px 2px black
 }
 .talk-text{
   font-size: medium;
@@ -179,11 +195,15 @@ border-radius:30%;
 button>a{
   text-decoration: none;
 }
+
 @media (max-width: 991px) {
 
  .main1{
-  
+  box-shadow: 6px 5px 3px black;
   border-radius:90px;
+}
+.main1:hover{
+  box-shadow: 9px 7px 7px black;
 }
 .video{
     width: 80%;

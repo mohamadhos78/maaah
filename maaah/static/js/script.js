@@ -10,4 +10,13 @@ $(document).ready(function(){
 			$('.accordion-heading').attr('data-open','open');
 		}
 	});
+	$('.section').hide();
+
+    setTimeout(function () {
+
+      $('.section').fadeIn();
+
+      $('.loader').fadeOut();
+
+    },3000)
 });

@@ -46,7 +46,7 @@ display: none;
 
 @media only screen and (max-width: 1024px) {
   #home {  
-    background:#002856 url('/static/img/n3.jpg') no-repeat  bottom/cover;
+    background:#002856 url('/static/img/n1.jpg') no-repeat  bottom/cover;
    
   }
   .month{

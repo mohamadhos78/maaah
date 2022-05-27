@@ -19,6 +19,76 @@
     padding: 0;
     margin: 0;
   }
+  /*loader*/
+  .loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+  }
+  .loader:before, .loader:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%);
+  }
+  .loader:before {
+    animation: before 2s infinite;
+  }
+  .loader:after {
+    animation: after 2s infinite;
+  }
+  
+  @keyframes before {
+    0% {
+      width: 0.5em;
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    35% {
+      width: 2.5em;
+      box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+    70% {
+      width: 0.5em;
+      box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    100% {
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+  }
+  @keyframes after {
+    0% {
+      height: 0.5em;
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+    35% {
+      height: 2.5em;
+      box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+    70% {
+      height: 0.5em;
+      box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+    100% {
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+  }
+  /**
+   * Attempt to center the whole thing!
+   */
+  .loader {
+    position: absolute;
+    top: calc(50% - 1.25em);
+    left: calc(50% - 1.25em);
+  }
+  /*endloader*/
+
+  
   #button-search{
     border-radius:50%;
     background-color: #249eae;
@@ -44,10 +114,10 @@
 display: none;
 }
 
+
 @media only screen and (max-width: 1024px) {
   #home {  
-    background:#002856 url('/static/img/n3.jpg') no-repeat  bottom/cover;
-   
+    background:#002856 url('/static/img/1024.jpg') no-repeat  bottom/cover;
   }
   .month{
     display: block;
@@ -58,17 +128,62 @@ display: none;
     margin-left: 15%;
   }
 } 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 999px) {
   #home {  
-    background:#002856 url('/static/img/n-1.jpg') no-repeat  bottom/cover;
+    background:#002856 url('/static/img/800.jpg') no-repeat  bottom/cover;
+   
+  }
+  .month{
+    display: none;
+  } 
+}  
+@media only screen and (max-width: 765px) {
+  #home {  
+    background:#002856 url('/static/img/780.jpg') no-repeat  bottom/cover;
    
   }
   .month{
     display: none;
   } 
 } 
+@media only screen and  (max-width:505px) {
+  #home {  
+    background:#002856 url('/static/img/480.jpg') no-repeat  bottom/cover;
+   
+  }
+  .month .sokhan-rahbar{
+    display: none;
+  } 
+  .sokhan-rahbar{
+    display: none;
+  }
+} 
+@media only screen and  (max-width:420px) {
+  #home {  
+    background:#002856 url('/static/img/360.jpg') no-repeat  bottom/cover;
+    padding: 33px;
+  }
+  .month .sokhan-rahbar{
+    display: none;
+  } 
+  .sokhan-rahbar{
+    display: none;
+  }
+} 
+@media only screen and (max-width: 359px) {
+  #home {  
+    background:#002856 url('/static/img/320.jpg') no-repeat  bottom/cover;
+   
+  }
+  .month {
+    display: none;
+  } 
+  .sokhan-rahbar{
+    display: none;
+  }
+} 
   #mainNav .navbar-toggler {
-    font-size: 80%;
+    font-size: 60%;
     padding: 0.75rem;
     color: #e5ecec;
     border: 2px solid #eaebeb;
@@ -100,11 +215,11 @@ display: none;
    
   }
   #mainNav .nav-link:hover {
-    background-color: #0e549e;
+    background-color: #033366;
     transition: all 0.4s;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    
+    color: white;
   }
 
   #mainNav.navbar-shrink {
@@ -144,11 +259,13 @@ display: none;
     line-height:25.5px;
     font-weight: bold;
   }
- 
+
+
   .reports-box{
     border-radius: 15px;
-    border: 3px solid #003a6699;
+    border: 1px solid #003a6699;
     background: #37a2a714;
+    box-shadow: 6px 5px 3px black;
 }
   
   .image-report{
@@ -176,6 +293,7 @@ display: none;
     border-radius: 15px;
     background-color: #fcfeff;
     border:3px solid #166380; 
+    box-shadow: 6px 5px 3px black;
   }
   .news{
     margin-right: 30%;
@@ -280,6 +398,9 @@ display: none;
 	box-sizing: border-box;
 	cursor: pointer;
 }
+.accordion-box .accordion-heading:hover{
+	background: #07478f;
+}
 .accordion-box .accordion-heading h3{
 	font-size: 15px;
 	color: #333;
@@ -307,7 +428,7 @@ video{
   }
   .carousel-inner img {
     width:100%;
-    height: 450px;
+    
   }
   .comments-container {
     margin: 60px auto 15px;
