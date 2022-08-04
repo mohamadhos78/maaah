@@ -27,6 +27,7 @@ class Talk(models.Model):
     name = models.CharField(max_length=64, null=False, blank=False)
     talk = models.TextField(null=False, blank=False)
     date = models.DateField(auto_now_add=True)
+    is_published = models.BooleanField(default=False)
     
     def __str__(self):
         return self.name

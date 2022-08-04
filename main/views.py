@@ -34,7 +34,7 @@ def your_talks(request):
         if talk_form.is_valid():
             talk_form.save()
 
-    talks = reversed(Talk.objects.all())
+    talks = reversed(Talk.objects.filter(is_published=True))
 
     context = {
         "talks" : talks,

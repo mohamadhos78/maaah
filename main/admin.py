@@ -1,11 +1,18 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import News, Report, Talk, Session, Teacher, Course
 
 admin.site.register(News)
 
 admin.site.register(Report)
 
-admin.site.register(Talk)
+class TalkAdmin(admin.ModelAdmin):
+    list_display = ('talk', 'name', 'is_published')
+    list_filter = ('is_published',)
+    
+
+admin.site.register(Talk, TalkAdmin)
+
 
 admin.site.register(Session)
 
