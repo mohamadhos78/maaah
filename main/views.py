@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import News, Report, Talk, Session
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 def index(request):
     news = News.objects.all()
@@ -19,8 +21,16 @@ def teacher(request):
     }
     return render(request, 'teacher.html', context)
     
-def eshghology(request):
-    sessions = Session.objects.all()
+def courses(request):
+    q = request.GET.get('q')
+    name = request.GET.get('name')
+    if q:
+        sessions = Session.objects.filter(Q(description__icontains=q) | Q(description__icontains=q))
+    elif name:
+        sessions = Session.objects.filter(Q(description__contains=name))
+    else:
+        sessions = Session.objects.all()
+
     context ={
         "sessions" : sessions ,
     }

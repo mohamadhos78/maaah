@@ -78,7 +78,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link > " href={% url 'eshghology' %}> عشقولوژی </a>
+                                <a class="nav-link > " href={% url 'courses' %}> عشقولوژی </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModal"> درباره ماه </a>
@@ -146,8 +146,8 @@
                             </li>
                         
                         </ul>
-                        <form class="form-inline " action="">
-                            <input id="input-search" class="form-control mr-sm-2 pt-1 pb-1 " type="text" placeholder="جوینده یابنده است...">
+                        <form class="form-inline " action="{% url 'courses' %}">
+                            <input id="input-search" name="q" class="form-control mr-sm-2 pt-1 pb-1 " type="text" placeholder="جوینده یابنده است...">
                             <button id="button-search" class="mr-1 ml-1 p-2 pr-3 pl-3" type="submit"> <i class="fas fa-search"></i></button>
                         </form>
                     </div>
