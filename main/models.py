@@ -60,6 +60,10 @@ class Report(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'گزارش'
+        verbose_name_plural = 'گزارش ها'
     
 
 class News(models.Model):
@@ -70,5 +74,5 @@ class News(models.Model):
         return self.text
     
     class Meta:
-        verbose_name = 'News'
-        verbose_name_plural = 'News'
+        verbose_name = 'خبر'
+        verbose_name_plural = 'اخبار'
