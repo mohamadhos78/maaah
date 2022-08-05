@@ -9,6 +9,10 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'دوره'
+        verbose_name_plural = 'دوره ها'
+
 
 class Session(models.Model):
     title = models.CharField(max_length=64, null=False, blank=False)
@@ -21,6 +25,9 @@ class Session(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = 'جلسه'
+        verbose_name_plural = 'جلسات'
 
 class Talk(models.Model):
     email = models.CharField(max_length=50, null=True)
