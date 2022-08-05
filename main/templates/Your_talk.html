@@ -13,6 +13,16 @@
                     {{talk.talk}}
                       </p>
                     <span class="time-right talk-text">{{talk.date}} </span>
+                    <br>
+                    {% if talk.reply %}
+                    <div class="container darker mt-4 p-3">
+                      <h5>{{talk.reply.name}}</h5>
+                      <p class="talk-text"> 
+                        {{talk.reply.talk}}
+                      </p >
+                      <span class="time-right talk-text">{{talk.reply.date}}</span>
+                    </div>
+                    {% endif %}
                   </div>
                 {% endfor %}
               </div>
