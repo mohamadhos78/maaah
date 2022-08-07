@@ -1,3 +1,5 @@
+from distutils.command.upload import upload
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -76,3 +78,13 @@ class News(models.Model):
     class Meta:
         verbose_name = 'خبر'
         verbose_name_plural = 'اخبار'
+
+class GeneralInformation(models.Model):
+    title = models.CharField(max_length=25, null=False, blank=False)
+    logo_small = models.FileField(upload_to="homepage", null=False, blank=False)
+    logo_medium = models.FileField(upload_to="homepage", null=False, blank=False)
+    logo_large = models.FileField(upload_to="homepage", null=False, blank=False)
+    desription = models.TextField()
+
+    def __str__(self):
+        return "اطلاعات کلی سایت"
