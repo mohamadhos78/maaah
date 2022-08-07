@@ -68,7 +68,7 @@ class Report(models.Model):
         verbose_name_plural = 'گزارش ها'
     
 
-class News(models.Model):
+class Story(models.Model):
     img = models.FileField(upload_to="news/img", null=False, blank=False)
     text = models.CharField(max_length=128, null=False, blank=False, default="بدون توضیحات")
 

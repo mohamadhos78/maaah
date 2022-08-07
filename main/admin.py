@@ -1,8 +1,7 @@
 from django.contrib import admin
-from django.utils.html import format_html
-from .models import GeneralInformation, News, Report, Talk, Session, Teacher, Course
+from .models import GeneralInformation, Story, Report, Talk, Session, Teacher, Course
 
-admin.site.register(News)
+admin.site.register(Story)
 
 admin.site.register(Report)
 

@@ -263,9 +263,9 @@
                         
                         <!-- The slideshow -->
                         <div class="carousel-inner">
-                          {% for new in news %}
+                          {% for story in stories %}
                             <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
-                              <img src={{new.img.url}} alt="اطلاعیه" >
+                              <img src={{story.img.url}} alt="اطلاعیه" >
                             </div>
                           {% endfor %}
                         </div>

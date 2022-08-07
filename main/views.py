@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .models import News, Report, Talk, Session
+from .models import Story, Report, Talk, Session
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db.models import Q
 
 def index(request):
-    news = News.objects.all()
+    stories = Story.objects.all()
     reports = Report.objects.all()
     context ={
-        "news" : news,
+        "stories" : stories,
         "reports" : reports,
     }
     return render(request, 'landing.html', context)
