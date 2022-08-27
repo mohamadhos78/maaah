@@ -21,6 +21,11 @@
         <link href={% static "./img/logo.png"%} rel="shortcut icon" />
         <title>موسسه فرهنگی هنری ماه</title>  
     </head>
+    <script>
+        function noRightClick() {
+      alert("متاسفانه قابل دخیره سازی نیست.");
+         }
+    </script>
     <body>
             <section>
                 <!--header-->       
@@ -29,8 +34,7 @@
 
                 <div class="container">
                     
-                    <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                        منو
+                    <button class="navbar-toggler nav-icon mt-1" type="button" data-toggle="collapse" data-target="#navbarResponsive">     
                         <i class="fas fa-bars"></i>
                     </button>
 
@@ -103,7 +107,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  حرف دل </a>
+                                <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  ارسال نظر </a>
                                 <!--modal_email-->
                                 <div class="modal fade text-muted " id="supportModall">
                                 <div class="modal-dialog">
@@ -127,7 +131,7 @@
                                             </div>
                                             <div class="form-group">
                                             <label for="message">متن پیام</label>
-                                            <textarea type="text" id="message" name="talk" class="form-control" placeholder="صحبت  ..."></textarea>
+                                            <textarea type="text" id="message" name="talk" class="form-control" placeholder="صحبت شما با ماه    ..."></textarea>
                                             </div>
                                             <div class="modal-footer">
                                                 <button id="button-email" class=" mr-1 ml-2 pl-4 pr-4 pt-1" type="submit">
@@ -142,7 +146,7 @@
                                 <!--endmodal-->
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link border2>" href={% url 'your_talks' %} > دلگویه های شما </a>
+                                <a class="nav-link border2>" href={% url 'your_talks' %} > نظرات شما  </a>
                             </li>
                         
                         </ul>
@@ -164,7 +168,7 @@
             <section >
                 <div class="loader"  style="margin-top: 200px">
                 </div>
-              </section> 
+            </section> 
             <!--footer-->
             <section class="section">
                 <footer class="mt-5">

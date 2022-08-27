@@ -10,30 +10,15 @@
                   <div class="row mt-1">
                     <div class="col">
                       <div  class="col text-center mb-1 p-2 Heading Heading-meetings ">
-                        <a class="meetings "> جلسات</a>
+                        <a class="meetings "> شماره جلسه:</a>
                       </div>
                     </div>
                   </div>
                   <div class="row mt-3 mb-1 mx-2">
                     <div  class="col text-center mb-1 p-2 Heading ">
-                      <a  href="#" > جلسه اول - عنوان جلسه اول</a>
+                      <a  href="#" > جلسه اول </a>
                     </div>
-                  </div>
-                  <div class="row mt-3 mb-1 mx-2">
-                    <div  class="col text-center mb-1 p-2 Heading ">
-                      <a  href="#" >جلسه دوم - عنوان جلسه دوم</a>
-                    </div>
-                  </div>
-                  <div class="row mt-3 mb-1 mx-2">
-                    <div  class="col text-center mb-1 p-2 Heading ">
-                      <a  href="#" >جلسه سوم - عنوان جلسه سوم</a>
-                    </div>
-                  </div>
-                  <div class="row mt-3 mb-1 mx-2">
-                    <div  class="col text-center mb-1 p-2 Heading ">
-                      <a  href="#" >جلسه چهارم - عنوان جلسه چهارم</a>
-                    </div>
-                  </div>  
+                  </div>                
                   <div class="row mt-1 pt-3">
                     <div class="col">
                       <div  class="col text-center mb-1 py-2 Heading Heading-meetings Online-class-box ">
@@ -45,7 +30,11 @@
                 <!--end-->
 
                 <div class="col-md-8 main pb-2 mt-5" >
-                {% for session in sessions %}
+                  <!--time-->
+                  <h5 class="text-center py-2">توجه:</h5>
+                  <P class="text-center Attention">بازه زمانی جهت استفاده از این جلسه به شرح زیر می باشد:</P>
+                  <h5 class="text-center">25 الی 28 آذر</h5>
+                   {% for session in sessions %}
                       <div class="row main1 mt-3 pt-2 pb-2 mx-2 text-center justify-content-around mr-auto">
                           <div class="col card ">
                             <div class="card-header text-white">
@@ -58,14 +47,14 @@
                             {% endif %}
                             {% if session.video %}
                               <div class="card-body ">
-                                <video controls controlslist="nodownload" class="video">
-                                  <source src={{session.video.url}} type="video/mp4">
+                                <video controls controlsList="nodownload" oncontextmenu="return false;" class="video">
+                                  <source  src={{session.video.url}} type="video/mp4">
                                 </video>
                               </div>
                             {% endif %}
                             {% if session.voice %}
                               <div class="card-body ">
-                                <audio controls  controlslist="nodownload" >
+                                <audio controls controlsList="nodownload" oncontextmenu="return false;" >
                                   <source src={{session.voice.url}} type="video/mp4">
                                 </audio>
                               </div>

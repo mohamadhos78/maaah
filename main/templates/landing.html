@@ -25,12 +25,12 @@
         <section>
             <!--header-->       
           <header id="home" class=" text-center">     
-            <nav class="navbar navbar-expand-md py-1 " id="mainNav">
+            <nav class="navbar navbar-expand-sm py-1 " id="mainNav">
 
               <div class="container">
                  
-                  <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                      منو
+                  <button class=" navbar-toggler mt-1 p-1" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                      
                       <i class="fas fa-bars"></i>
                   </button>
 
@@ -103,7 +103,7 @@
                               </div>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  حرف دل </a>
+                              <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  ارسال نظر   </a>
                                <!--modal_email-->
                               <div class="modal fade text-muted " id="supportModall">
                               <div class="modal-dialog">
@@ -127,7 +127,7 @@
                                         </div>
                                         <div class="form-group">
                                           <label for="message">متن پیام</label>
-                                          <textarea type="text" id="message" name="talk" class="form-control" placeholder="صحبت  ..."></textarea>
+                                          <textarea type="text" id="message" name="talk" class="form-control" placeholder="صحبت شما با ماه   ..."></textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <button id="button-email" class=" mr-1 ml-2 pl-4 pr-4 pt-1" type="submit">
@@ -142,7 +142,7 @@
                             <!--endmodal-->
                           </li>
                           <li class="nav-item ">
-                              <a class="nav-link border2>" href={% url 'your_talks' %} > دلگویه های شما </a>
+                              <a class="nav-link border2>" href={% url 'your_talks' %} > نظرات شما    </a>
                           </li>
                       
                       </ul>
@@ -161,10 +161,35 @@
 
 
        
-           <!--report||news-->
+           <!--reports*news-->
            <div class="col ">
             <section class="section" >
               <div class="row container-fluid box-reports-news">
+
+                  <div class="col-sm-3 mr-3  mt-3 ">
+                    <h5 class="text-center news py-2  mb-2">اخبار موسسه</h5>
+                    <div class="row News p-2" style="background-color:rgb(71, 130, 219); ">
+                      <div id="demo" class="carousel slide" data-ride="carousel"> 
+                        <!-- The slideshow -->
+                        <div class="carousel-inner story-icon">
+                          {% for story in stories %}
+                            <div class="carousel-item  {% if forloop.counter == 1 %} active{% endif %}">
+                              <img src={{story.img.url}} alt="اطلاعیه">
+                            </div>
+                          {% endfor %}
+                        </div>
+                        
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                 
                   <div class="col-sm-8  mt-3 mr-3">
                         <h5 class="text-center image-report py-2 mb-2">گزارش تصویری هیئت دخترانه بنت الهدی</h5>
                         <div class="row reports-box p-2"> 
@@ -196,7 +221,6 @@
                                   </div>
                                 
                                 </div>
-                              </div>
                             </div>
                             
                             <div class="accordion-box">
@@ -249,41 +273,11 @@
                           </div>
                         </div>             
                   </div>
-                  <div class="col-sm-3 mr-3  mt-3 ">
-                    <h5 class="text-center news py-2  mb-2">اخبار موسسه</h5>
-                    <div class="row News p-2">
-                      <div id="demo" class="carousel slide" data-ride="carousel">
 
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                          <li data-target="#demo" data-slide-to="0" class="active"></li>
-                          <li data-target="#demo" data-slide-to="1"></li>
-                          
-                        </ul>
-                        
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
-                          {% for story in stories %}
-                            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
-                              <img src={{story.img.url}} alt="اطلاعیه" >
-                            </div>
-                          {% endfor %}
-                        </div>
-                        
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                          <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                          <span class="carousel-control-next-icon"></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  
               </div>
             </section>      
-           </div> 
-           
+           </div>           
             <section >
               <div class="loader"  style="margin-top: 200px">
               </div>

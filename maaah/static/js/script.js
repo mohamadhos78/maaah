@@ -10,6 +10,7 @@ $(document).ready(function(){
 			$('.accordion-heading').attr('data-open','open');
 		}
 	});
+
 	$('.section').hide();
 
     setTimeout(function () {
@@ -19,4 +20,5 @@ $(document).ready(function(){
       $('.loader').fadeOut();
 
     },3000)
+	
 });
