@@ -1,3 +1,4 @@
+
 @import url("//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)");
 @font-face {
   font-family: "IRANSansWeb(FaNum)";
@@ -7,20 +8,90 @@
    url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.woff") format("woff"),
    url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.ttf") format("truetype"),
    url("//db.onlinewebfonts.com/t/5c53f1a72f61b5b51e2ea79a22ebc38b.svg#IRANSansWeb(FaNum)") format("svg"); }
+
   body {
-  
     text-align: right !important;
     line-height: 1.6;
     background: rgb(252 254 255);
-
+    font-family: "IRANSansWeb(FaNum)" !important;
   }
   *{
     padding: 0;
     margin: 0;
   }
+  /*loader*/
+  .loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+  }
+  .loader:before, .loader:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%);
+  }
+  .loader:before {
+    animation: before 2s infinite;
+  }
+  .loader:after {
+    animation: after 2s infinite;
+  }
+  
+  @keyframes before {
+    0% {
+      width: 0.5em;
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    35% {
+      width: 2.5em;
+      box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+    70% {
+      width: 0.5em;
+      box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    100% {
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+  }
+  @keyframes after {
+    0% {
+      height: 0.5em;
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+    35% {
+      height: 2.5em;
+      box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+    70% {
+      height: 0.5em;
+      box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+    100% {
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+  }
+  /**
+   * Attempt to center the whole thing!
+   */
+  .loader {
+    position: absolute;
+    top: calc(50% - 1.25em);
+    left: calc(50% - 1.25em);
+  }
+  /*endloader*/
+
+  
   #button-search{
     border-radius:50%;
-    background-color: #249eae;
+    background-color: #709acc;
     border: 1px solid #444440;
     transition: all 0.4s;
    
@@ -32,8 +103,7 @@
   border-radius:25px;
   background-color: #ffffffe6;
   border: 1px solid #002856;
-  font-family: "IRANSansWeb(FaNum)";
- 
+  
 }
 #home {
   height:450px;
@@ -44,11 +114,18 @@
 display: none;
 }
 
+@media only screen and (min-width: 1024px) {
+  .news {
+    margin-top: inherit;
+  } 
+  
+}
+
 @media only screen and (max-width: 1024px) {
   #home {  
-    background:#002856 url('/static/img/n1.jpg') no-repeat  bottom/cover;
-   
+   background:#002856 url('/static/img/1024.jpg') no-repeat  bottom/cover;
   }
+
   .month{
     display: block;
     color: white;
@@ -57,18 +134,146 @@ display: none;
     margin-top:15%;
     margin-left: 15%;
   }
+  .news{
+    margin-top: revert-layer;
+  }
 } 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 999px) {
   #home {  
-    background:#002856 url('/static/img/n-1.jpg') no-repeat  bottom/cover;
+   background:#002856 url('/static/img/800.jpg') no-repeat  bottom/cover;
    
+  }
+
+  .month{
+    display: none;
+  } 
+    .news {
+      margin-top: 21px;
+    }  
+
+}  
+@media only screen and (max-width: 765px) {
+  #home {  
+   background:#002856 url('/static/img/780.jpg') no-repeat  bottom/cover;
+  }
+  .nav-icon{
+    background: #002856;
+    border: none;
+    color: wheat;
+    
   }
   .month{
     display: none;
   } 
+  .news{
+    margin-inline: auto;
+  }
+  .News{
+    width:max-content;
+    margin-inline: auto;
+  }
+} 
+@media only screen and (min-width:576px) and (max-width:765px){
+  .News {
+    width: revert; 
+  }
+  .news{
+    margin-top: 20px;
+  }
+  
+}
+@media only screen and  (max-width:505px) {
+  #home {  
+    background:#002856 url('/static/img/480.jpg') no-repeat  bottom/cover;
+   
+  }
+  
+  .month .sokhan-rahbar{
+    display: none;
+  } 
+  .sokhan-rahbar{
+    display: none;
+  }
+  
+  .fas{
+    font-size:x-large ;
+  }
+  .navbar{
+    left:3px; 
+  }
+  .News{
+    width:max-content;
+    margin-inline: auto;
+  }
+  .news{
+    width: 50%;
+    margin-top: 5px;
+  }
+ 
+} 
+@media only screen and  (max-width:420px) {
+  .nav-icon{
+    background: #002856;
+    border: none;
+    color: wheat;
+    
+  }
+  .fas{
+    font-size:x-large ;
+  }
+  .navbar{
+    left: 30px;
+    bottom: 25px;
+  }
+  #home {  
+   background:#002856 url('/static/img/360.jpg') no-repeat  bottom/cover;
+    padding: 33px;
+  }
+  .month .sokhan-rahbar{
+    display: none;
+  } 
+  .sokhan-rahbar{
+    display: none;
+  }
+  .News{
+    width: auto;
+  }
+  .news{
+   
+    margin-top: 5px;
+  }
+} 
+@media only screen and (max-width: 359px) {
+ 
+  .nav-icon{
+    background: #002856;
+    border: none;
+    color: wheat;  
+  }
+   
+  #home {  
+   background:#002856 url('/static/img/320.jpg') no-repeat  bottom/cover;
+   
+  }
+  .month {
+    display: none;
+  } 
+  .sokhan-rahbar{
+    display: none;
+  }
+  #mainNav{
+    bottom: 30px;
+    left: 20px;
+  }
+  .News{
+    width: initial;
+  }
+  .news{
+    margin-top: 20px;
+  }
 } 
   #mainNav .navbar-toggler {
-    font-size: 80%;
+    font-size: 60%;
     padding: 0.75rem;
     color: #e5ecec;
     border: 2px solid #eaebeb;
@@ -94,18 +299,17 @@ display: none;
     padding:10px;
     margin-right: 3px;
     color:black;
-    font-family: "IRANSansWeb(FaNum)";
     float: center;
     font-size: small;
     font-weight: bold;
    
   }
   #mainNav .nav-link:hover {
-    background-color: #0e549e;
+    background-color: #033366;
     transition: all 0.4s;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    
+    color: white;
   }
 
   #mainNav.navbar-shrink {
@@ -143,14 +347,15 @@ display: none;
   #banner-par{
     width:55%;
     line-height:25.5px;
-    font-family: "IRANSansWeb(FaNum)";
     font-weight: bold;
   }
- 
+
+
   .reports-box{
     border-radius: 15px;
-    border: 3px solid #003a6699;
+    border: 1px solid #003a6699;
     background: #37a2a714;
+    box-shadow: 6px 5px 3px black;
 }
   
   .image-report{
@@ -160,7 +365,6 @@ display: none;
     background-color: #002856;
     border-radius: 10px;
     font-size: small;
-    font-family: "IRANSansWeb(FaNum)";
     color: #fcf117;
   }
   @media only screen and (max-width:661px) {
@@ -168,29 +372,27 @@ display: none;
     .image-report {
       margin-right: 10%;
       width: 80%;  
+     
     }
   } 
   .reports-text{
     font-weight: bold;
     font-size: small;
-    font-family: "IRANSansWeb(FaNum)";
   }
   .News{
   
     border-radius: 15px;
     background-color: #fcfeff;
     border:3px solid #166380; 
+    box-shadow: 6px 5px 3px black;
   }
   .news{
-    margin-right: 30%;
-    margin-top: 20px;
-    width: 40%;
     background-color: #002856;
     border-radius: 10px;
     font-size: small;
     color: #fcf117;
-    font-family: "IRANSansWeb(FaNum)";
   }
+ 
   #banner{
     margin-top: 3%;
   }
@@ -206,13 +408,7 @@ display: none;
     height: 70px;
     margin-top:40%;
   }
-  @media screen and (max-width: 414px) {
-    .logo{
-      width:70px;
-      height: 70px;
-      margin-top:0;
-    }
-  }
+ 
   .contain {
     width: 100%;
     margin: 0 auto;
@@ -223,7 +419,7 @@ display: none;
     
   }
   .row__inner {
-    transition: 450ms transform;
+   
     font-size: 0;
     white-space: nowrap;
     margin: 70.3125px 0;
@@ -237,36 +433,24 @@ display: none;
     margin-right: 10px;
     font-size: 20px;
     cursor: pointer;
-    transition: 450ms all;
-    transform-origin: center left;
+    margin: 30px;
+   
   }
   .tile__img {
-    width: 150px;
-    height: 150px;
+    width:200px;
+    height:200px;
     -o-object-fit: cover;
        object-fit: cover;
-        box-shadow: 2px 2px 2px 4px rgba(9, 19, 0, 0.76) !important;
-      border-radius: 5px;
+        box-shadow: 10px 10px 5px -5px #666;
+      border-radius: 8px;
   }
-  .titr-reports{
-    color: #efe8e8;
+  .tile__img:hover {
+    box-shadow: 15px 15px 5px -8px rgb(26, 25, 25);
+    border-radius: 10px;
+    border:1px solid rgb(27, 27, 27)
+   
   }
-  .row__inner:hover {
-    transform: translate3d(-62.5px, 0, 0);
-  }
-  .row__inner:hover .tile:hover {
-    transform: scale(1.5);
-    opacity: 1;
-  }
-  .row__inner .tile:first-child {
-    z-index: 99;
-  }
-  .row__inner:hover .tile:first-child:hover {
-    transform: scale(1.5) translate(2.6rem, 0);
-  }
-  .tile:hover ~ .tile {
-    transform: translate3d(125px, 0, 0);
-  }
+  
   /*colapse*/
   
 #accordion{
@@ -284,6 +468,9 @@ display: none;
 	border-radius: 3px 3px 0 0;
 	box-sizing: border-box;
 	cursor: pointer;
+}
+.accordion-box .accordion-heading:hover{
+	background: #07478f;
 }
 .accordion-box .accordion-heading h3{
 	font-size: 15px;
@@ -312,7 +499,7 @@ video{
   }
   .carousel-inner img {
     width:100%;
-    height: 450px;
+    
   }
   .comments-container {
     margin: 60px auto 15px;
@@ -556,7 +743,6 @@ video{
   }
  .text-footer{
   font-size: small;
-  font-family: "IRANSansWeb(FaNum)";
   color: white;
  }
   @media (min-width: 768px) and (max-width: 991px) {
