@@ -79,10 +79,10 @@ class Story(models.Model):
 
 class GeneralInformation(models.Model):
     title = models.CharField(max_length=25, null=False, blank=False)
-    logo_small = models.FileField(upload_to="homepage", null=False, blank=False)
-    logo_medium = models.FileField(upload_to="homepage", null=False, blank=False)
-    logo_large = models.FileField(upload_to="homepage", null=False, blank=False)
     desription = models.TextField()
+    instagram = models.URLField(max_length=250, null=True, blank=True)
+    telegram = models.URLField(max_length=250, null=True, blank=True)
+    eitaa = models.URLField(max_length=250, null=True, blank=True)
 
     def __str__(self):
         return "اطلاعات کلی سایت"
