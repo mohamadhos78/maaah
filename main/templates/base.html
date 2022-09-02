@@ -19,7 +19,11 @@
         <script src={% static "js/bootstrap.min.js"%}></script>
         <script src={% static "./js/script.js"%}></script>
         <link href={% static "./img/logo.png"%} rel="shortcut icon" />
-        <title>موسسه فرهنگی هنری ماه</title>  
+        {% if home_page_information %}
+            <title>{{home_page_information.title}}</title>
+        {% else %} 
+            <title>موسسه فرهنگی هنری ماه</title>
+        {% endif %}
     </head>
     <script>
         function noRightClick() {
@@ -190,14 +194,14 @@
                               <h3 class="text-white text-footer  mt-5">ما را در شبکه های اجتماعی دنبال کنید.</h3>
                               <div class="d-flex justify-content-center mt-3">
                                 <div class="p-2">
-                                <a href="https://eitaa.com/noore_maaah"><img class="footer-img" src={% static "./img/eita.png" %} alt="ایتا"></a>
+                                <a href={{home_page_information.eitaa}}><img class="footer-img" src={% static "./img/eita.png" %} alt="ایتا"></a>
                                 </div>
                                 <div class="p-2">
-                                  <a href="https://t.me/noore_maaah"><img class="footer-img" src={% static "./img/telegram.png" %} alt="ایتا"></a>
+                                  <a href={{home_page_information.telegram}}><img class="footer-img" src={% static "./img/telegram.png" %} alt="ایتا"></a>
                                   </div>
                                   
                                 <div class="p-2">
-                                  <a href="https://instagram.com/maaah_313 "><img class="footer-img" src={% static "./img/insta.png" %} alt="اینستاگرام"></i></a>
+                                  <a href={{home_page_information.instagram}}><img class="footer-img" src={% static "./img/insta.png" %} alt="اینستاگرام"></i></a>
                                   </div>                  
                               </div>
                           </div>

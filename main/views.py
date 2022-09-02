@@ -1,15 +1,18 @@
 from django.shortcuts import render
-from .models import Story, Report, Talk, Session
+from .models import Story, Report, Talk, Session, GeneralInformation
+from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db.models import Q
 
 def index(request):
+    home_page_information = get_object_or_404(GeneralInformation, id=1)
     stories = Story.objects.all()
     reports = Report.objects.all()
     context ={
         "stories" : stories,
         "reports" : reports,
+        "home_page_information" : home_page_information
     }
     return render(request, 'landing.html', context)
 
@@ -24,6 +27,7 @@ def teacher(request):
 def courses(request):
     q = request.GET.get('q')
     name = request.GET.get('name')
+    home_page_information = get_object_or_404(GeneralInformation, id=1)
     if q:
         sessions = Session.objects.filter(Q(description__icontains=q) | Q(description__icontains=q))
     elif name:
@@ -33,6 +37,7 @@ def courses(request):
 
     context ={
         "sessions" : sessions ,
+        "home_page_information" : home_page_information
     }
     return render(request, 'eshghology.html', context)
 

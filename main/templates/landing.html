@@ -18,7 +18,11 @@
         <script src={% static "js/bootstrap.min.js"%}></script>
         <script src={% static "./js/script.js"%}></script>
         <link href={% static "./img/logo.png"%} rel="shortcut icon" />
-        <title>موسسه فرهنگی هنری ماه</title>  
+        {% if home_page_information %}
+          <title>{{home_page_information.title}}</title>
+        {% else %} 
+          <title>موسسه فرهنگی هنری ماه</title>
+        {% endif %}
     </head>
     <body>
          
@@ -194,11 +198,7 @@
                         <h5 class="text-center image-report py-2 mb-2">گزارش تصویری هیئت دخترانه بنت الهدی</h5>
                         <div class="row reports-box p-2"> 
                           <p class="text-center mt-2 reports-text" > 
-                            طرح‌نما یا لورم ایپسوم به نوشتاری
-                            آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
-                            طراح گرافیک از این نوشتار به‌عنوان عنصری از ترکیب‌بندی برای پُر کردن 
-                          صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده‌استفاده می‌کند، 
-                          تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد
+                          {{home_page_information.description}}
                           </p>                   
                           <div id="accordion">
                             <div class="accordion-box">
@@ -303,15 +303,15 @@
                           <h3 class="text-white text-footer  mt-5">ما را در شبکه های اجتماعی دنبال کنید.</h3>
                           <div class="d-flex justify-content-center mt-3">
                             <div class="p-2">
-                            <a href="https://eitaa.com/noore_maaah"><img class="footer-img" src={% static "./img/eita.png" %} alt="ایتا"></a>
-                            </div>
-                            <div class="p-2">
-                              <a href="https://t.me/noore_maaah"><img class="footer-img" src={% static "./img/telegram.png" %} alt="ایتا"></a>
+                              <a href={{home_page_information.eitaa}}><img class="footer-img" src={% static "./img/eita.png" %} alt="ایتا"></a>
                               </div>
-                              
-                            <div class="p-2">
-                              <a href="https://instagram.com/maaah_313 "><img class="footer-img" src={% static "./img/insta.png" %} alt="اینستاگرام"></i></a>
-                              </div>                  
+                              <div class="p-2">
+                                <a href={{home_page_information.telegram}}><img class="footer-img" src={% static "./img/telegram.png" %} alt="ایتا"></a>
+                                </div>
+                                
+                              <div class="p-2">
+                                <a href={{home_page_information.instagram}}><img class="footer-img" src={% static "./img/insta.png" %} alt="اینستاگرام"></i></a>
+                                </div>                  
                           </div>
                       </div>
                   </div> 
