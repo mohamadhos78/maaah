@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import GeneralInformation, Story, Report, Talk, Session, Teacher, Course
-
+from .models import (
+    GeneralInformation, Story, Report, Talk, Session, Teacher, Course, Video
+)
 admin.site.register(Story)
 
 admin.site.register(Report)
@@ -20,3 +21,5 @@ admin.site.register(GeneralInformation)
 admin.site.register(Teacher)
 
 admin.site.register(Course)
+
+admin.site.register(Video)

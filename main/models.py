@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -35,7 +33,7 @@ class Talk(models.Model):
     email = models.CharField(max_length=50, null=True)
     name = models.CharField(max_length=64, null=False, blank=False)
     talk = models.TextField(null=False, blank=False)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True, )
     is_published = models.BooleanField(default=False)
     reply = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
     
@@ -88,3 +86,8 @@ class GeneralInformation(models.Model):
 
     def __str__(self):
         return "اطلاعات کلی سایت"
+
+class Video(models.Model):
+    title = models.CharField(max_length=70, null=False, blank=False)
+    description = models.TextField()
+    video = models.FileField(upload_to="videos", null=False, blank=False)
