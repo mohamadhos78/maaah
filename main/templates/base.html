@@ -9,6 +9,7 @@
         <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/> 
+        <link href="//db.onlinewebfonts.com/c/3b019b0df3b0d6ea4d1b2f051132febb?family=IranNastaliq" rel="stylesheet" type="text/css"/>
         <link href="//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href={% static "./css/landing.css" %}/>
         <link rel="stylesheet" href={% static "./css/style.css" %}/>
@@ -25,11 +26,7 @@
             <title>موسسه فرهنگی هنری ماه</title>
         {% endif %}
     </head>
-    <script>
-        function noRightClick() {
-      alert("متاسفانه قابل دخیره سازی نیست.");
-         }
-    </script>
+    
     <body>
             <section>
                 <!--header-->       
@@ -48,74 +45,20 @@
                             <li class="nav-item item-align-center">
                                 <a class="nav-link  > " href={% url 'index' %}> خانه </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link >" href={% url 'teacher' %} data-toggle="modal" data-target="#supportmyModal"> ویژه مربیان </a>
-                                <div class="modal fade text-muted " id="supportmyModal">
-                                    <div class="modal-dialog">
-                                        <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                            <p class="modal-title text-black-100  mt-3"> ورود</p>
-                                            <button class="close ml-0" data-dismiss="modal">
-                                                <span>&times;</span>
-                                            </button>
-                                            </div>
-                                            <div class="modal-body">
-                                            <form action={% url 'admin:login' %}?next={% url 'teacher' %} method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-group">
-                                                <label for="name">نام کاربری</label>
-                                                <input type="text" id="name" name="username" class="form-control" placeholder=" نام کاربری...">
-                                                </div>
-                                                <div class="form-group">
-                                                <label for="password">رمز ورود</label>
-                                                <input type="password" id="password" name="password" class="form-control" placeholder="رمز ورود..." >
-                                                </div>
-                                                
-                                                <div class="modal-footer">
-                                                    <button id="button-email" class=" mr-1 ml-2 pl-4 pr-4 pb-1" type="submit">
-                                                    {% comment %} <a href={% url 'admin:login' %}?next={% url 'teacher' %}> ورود</a> {% endcomment %}
-                                                    ورود
-                                                    </button>
-                                                </div>
-                                            </form>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    </div>
-                                </div>
-                            </li>
+                           
                             <li class="nav-item">
                                 <a class="nav-link > " href={% url 'courses' %}> عشقولوژی </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModal"> درباره ماه </a>
-                                <div class="modal fade text-muted " id="supportModal">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <p class="text-black-100"> 
-                                            موسسه فرهنگی هنری ماه : <br>
-                                            محفلی برای دختران نوجوان ایرانی
-                                            <br>
-                                            مرکز تولید فکر و ایده و  محتوا برای کار فرهنگی دخترانه<br>
-                                            حمایت کننده و ارتقادهنده مربیان،معلمان،و فعالین فرهنگی که با دختران نوجوان سر و کار دارند.
-                        
-                                        </p>
-                                        <button class="close ml-0" data-dismiss="modal">
-                                            <span>&times;</span>
-                                        </button>
-                                        </div>                                           
-                                    </div>
-                                    </div>
-                                </div>
+                                <a class="nav-link > " href=#> حرف ناشناس </a>
                             </li>
+                          
                             <li class="nav-item">
                                 <a class="nav-link >" href={% url 'your_talks' %} data-toggle="modal" data-target="#supportModall">  ارسال نظر </a>
                                 <!--modal_email-->
                                 <div class="modal fade text-muted " id="supportModall">
                                 <div class="modal-dialog">
-                                    <div class="modal-content">
+                                    <div class="modal-content modal-lable-style">
                                         <div class="modal-header">
                                         <p class="modal-title text-black-100"> منتظر پیامت هستیم...</p>
                                         <button class="close ml-0" data-dismiss="modal">
@@ -135,7 +78,7 @@
                                             </div>
                                             <div class="form-group">
                                             <label for="message">متن پیام</label>
-                                            <textarea type="text" id="message" name="talk" class="form-control" placeholder="صحبت شما با ماه    ..."></textarea>
+                                            <textarea type="text" id="message" name="talk" class="form-control" placeholder="صحبت شما با ماه ..."></textarea>
                                             </div>
                                             <div class="modal-footer">
                                                 <button id="button-email" class=" mr-1 ml-2 pl-4 pr-4 pt-1" type="submit">
@@ -152,7 +95,31 @@
                             <li class="nav-item ">
                                 <a class="nav-link border2>" href={% url 'your_talks' %} > نظرات شما  </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link >" href="#" data-toggle="modal" data-target="#supportModal"> درباره ماه </a>
+                                <div class="modal fade text-muted " id="supportModal">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content modal-lable-style">
+                                        <div class="modal-header">
+                                        <p class="text-black-100"> 
+                                            موسسه فرهنگی هنری ماه : <br>
+                                            محفلی برای دختران نوجوان ایرانی
+                                            <br>
+                                            مرکز تولید فکر و ایده و  محتوا برای کار فرهنگی دخترانه<br>
+                                            حمایت کننده و ارتقادهنده مربیان،معلمان،و فعالین فرهنگی که با دختران نوجوان سر و کار دارند.
                         
+                                        </p>
+                                        <button class="close ml-0" data-dismiss="modal">
+                                            <span>&times;</span>
+                                        </button>
+                                        </div>                                           
+                                    </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link border2>" href="#Connection-Month" > ارتباط با ماه   </a>
+                            </li>
                         </ul>
                         <form class="form-inline " action="{% url 'courses' %}">
                             <input id="input-search" name="q" class="form-control mr-sm-2 pt-1 pb-1 " type="text" placeholder="جوینده یابنده است...">
@@ -169,10 +136,7 @@
             {% block main%}
     
             {% endblock %}
-            <section >
-                <div class="loader"  style="margin-top: 200px">
-                </div>
-            </section> 
+          
             <!--footer-->
             <section class="section">
                 <footer class="mt-5">
@@ -189,7 +153,7 @@
                                 و مدیریت می نمایند باید حق جهاد را به جا آورند.
                          </p>
                          
-                      <div class="col col-sm-4">
+                      <div class="col col-sm-4" id="Connection-Month">
                           <div  id="links" class="p-2 text-center" >
                               <h3 class="text-white text-footer  mt-5">ما را در شبکه های اجتماعی دنبال کنید.</h3>
                               <div class="d-flex justify-content-center mt-3">

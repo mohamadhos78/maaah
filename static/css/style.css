@@ -11,7 +11,7 @@
   body {
     text-align: right !important;
     line-height: 1.6;
-    background: rgb(252 254 255);
+    background: rgb(217, 217, 217);
     font-family: "IRANSansWeb(FaNum)" !important;
   }
   *{
@@ -110,7 +110,7 @@ h5{
   font-size: small;
   color: black;
 }
-.modal-content{
+.modal-box{
  border-radius: 5px;
  color: black;
  font-weight: bold;
@@ -131,6 +131,7 @@ h5{
     border-radius: 10px;
 
 }
+.form
 .footer-img{
   width: 2em;
   height: 2em;
@@ -186,7 +187,9 @@ border-radius:30%;
 .your-talks{
   border: 2px solid;
   border-radius: 20px;
-  box-shadow: 4px 4px 2px black
+  box-shadow: 4px 4px 2px black;
+  background: aliceblue;
+
 }
 .talk-text{
   font-size: medium;
