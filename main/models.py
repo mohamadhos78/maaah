@@ -80,6 +80,7 @@ class Story(models.Model):
 class GeneralInformation(models.Model):
     title = models.CharField(max_length=25, null=False, blank=False)
     desription = models.TextField()
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
     instagram = models.URLField(max_length=250, null=True, blank=True)
     telegram = models.URLField(max_length=250, null=True, blank=True)
     eitaa = models.URLField(max_length=250, null=True, blank=True)
