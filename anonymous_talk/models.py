@@ -1,7 +1,9 @@
 from django.db import models
+import uuid
 
-# Create your models here.
+
 class AnonymousTalk(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     talk = models.TextField(null=False, blank=False)
     reply = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
 
