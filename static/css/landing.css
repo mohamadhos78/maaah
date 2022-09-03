@@ -917,20 +917,20 @@
       margin-right: 2.5rem;
       margin-left: 2.5rem;
     }
-    textarea.form-control-1 {
-      height:8rem;
-      border: none;
-      font-size: x-small;
-  }  
-  .form-control-1:focus {
-    color: #ffffff;
-    background-color: #2a2f32;
-    font-weight: initial;
-   
-  }
-  .text-color-form{
-    color: black;
-  }
+      textarea.form-control-1 {
+        height:8rem;
+        border: none;
+        font-size: x-small;
+    }  
+    .form-control-1:focus {
+      color: #ffffff;
+      background-color: #2a2f32;
+      font-weight: initial;
+     
+    }
+    .text-color-form{
+      color: black;
+    }
   .title-Haj-Agha{
     margin-top: revert;
     text-align: justify;
@@ -1025,14 +1025,16 @@
     text-align: center;
   }
   .modal-dialog{
-    margin-top: 2em;
+    margin-top: 3em;
+   
   }
   .modal-lable-style{
-    border-radius: 3em;
+    border-radius:10px;
     background-color: #eaeff0;
     color: black;
-    border: none !important;
+   
   }
+  
     /** =====================
      * Responsive
      ========================*/
