@@ -42,7 +42,8 @@
                             </div>
                         </div>
                         <div class="Text">
-                        <form action=# method="POST">                                                                     
+                        <form action="{% url 'send-anonymous-message' %}" method="POST">                                                                     
+                            {% csrf_token %} 
                             <div class="form-group form-chat mt-4" >               
                                 <textarea  type="text" id="message" name="talk" class="form-control form-control-1 items-chat-style mx-2 " placeholder="پیام خودتو بنویس " ></textarea>
                             </div>
