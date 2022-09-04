@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block main%}
+    <section>
+        <div class=" text-muted ">
+            <div class="modal-dialog">
+                <div class="modal-content modal-box-chat">
+                <div class="col" >
+                    <div class="row mt-4 mx-4 div-challenger pt-2">
+                        <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
+                    </div>
+                    <div class="row">
+                        <div class="col " >
+                            <form action=# method="POST">                                                                     
+                                <div class="form-group  mt-4 mx-3" >   
+                                    <label class="answer-code-lable py-2" for="">لطفا کد سوال خود را وارد نمایید.</label>            
+                                <textarea  type="text" id="message"  class="form-control textarea-code  mx-2 " placeholder="XXXXX" ></textarea>
+                                </div>
+                                <div class="col mb-2 buttons-chat ">
+                                    <button id="button" class=" mr-1 ml-1  py-2 Show_answer" type="submit">
+                                    نمایش پاسخ
+                                    </button>                            
+                                </div>        
+                            </form>
+                        </div>
+                    </div>
+                    <div class="Text">
+                        <h5 class="py-2 title-answer">پاسخ حاج آقا راضی به سوال شما</h5>
+                        <div class="col text_Haj_Agha_answer ">
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، 
+                                و با استفاده از طراحان
+                                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                                تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در 
+                                شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها
+                                شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی 
+                                ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
+                                و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، 
+                                و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                            </p>
+                        </div>
+            
+                    </div>
+                </div>   
+                <div class="Text">                                                                                                                    
+                    <div class="col mb-2 delgooyeh-footer">
+                    <p class="title-chat-maaah2">موسسه فرهنگی هنری ماه</p>   
+                                                    
+                    <a href="https://eitaa.com/noore_maaah" class="eata-aydi mb-1">                                      
+                        noore_maaah@
+                        <img class="img-eata-chat" src=./img/eita-chat.png alt="ایتا">
+                    </a>
+                
+                    </div>                                          
+                </div>                                                             
+                </div>
+            </div>  
+        </div>
+    </section>
+{% endblock %}

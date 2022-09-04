@@ -529,7 +529,7 @@
   
     .reports-box{
       border-radius: 15px;
-      border: 1px solid #003a6699;
+      border: 1px solid black;
       background: #37a2a714;
       box-shadow: 6px 5px 3px black;
   }
@@ -917,17 +917,18 @@
       margin-right: 2.5rem;
       margin-left: 2.5rem;
     }
-      textarea.form-control-1 {
-        height:8rem;
-        border: none;
-        font-size: x-small;
-    }  
-    .form-control-1:focus {
-      color: #ffffff;
-      background-color: #2a2f32;
-      font-weight: initial;
-     
-    }
+    .textarea-chat {
+      height:8rem;
+      border: none;
+      font-size: x-small;
+      width: 100%;
+      color: white;
+  }  
+  .form-control:focus {
+    color: #ffffff;
+    background-color: #2a2f32;
+    font-weight: initial;  
+  }
     .text-color-form{
       color: black;
     }
@@ -988,10 +989,15 @@
     border: none;
     color: white;
     font-size: x-small;
+    text-decoration: none;
   }
   .answer-button:hover{
     background:#44484b ;
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
   }
+
   .img-eata-chat{
     float: none !important;
     max-width: 20px !important;
@@ -1001,12 +1007,12 @@
   .title-chat-maaah{
     margin-right: 28%;
   }
-  .eata-aydi{
+  .eita-aydi{
     color: #6c757d;
     font-size: x-small;
     text-align: center;
   }
-  .eata-aydi:hover{
+  .eita-aydi:hover{
     text-decoration: none;
     color: #6c757d;
   }
@@ -1034,7 +1040,66 @@
     color: black;
    
   }
-  
+  textarea.form-control {
+    height: 8em;
+  }
+
+.div-challenger{
+  background-color: #303338;
+  text-align: center;
+  justify-content: center;
+  color: #f5ec91;
+  font-size: larger;
+  border-radius: 10px;
+}
+
+  .title-challenge{
+    color: #f5ec91;
+  }
+  .answer-code-lable{
+    margin-right: 15px;
+    color: white;
+    font-size: small;
+  }
+.text_Haj_Agha_answer{
+height: auto;
+background: #303338;
+padding: 12px;
+color: #fdcd69;
+border-radius: 25px;
+text-align: justify;
+width: 90%;
+margin-right: 15px;
+}
+.textarea-code{
+  height: 2em;
+  font-size: smaller;
+  background: #303338;
+  border: none;
+  border-radius:15px;
+  width: 94%;
+  color: white;
+}
+.title-answer{
+  margin-right: 30px;
+  color: white;
+  font-size: small;
+}
+.Show_answer{
+  background-image: linear-gradient(to left,#ffde23,rgb(255, 255, 143));
+border-radius: 15px;
+border: none;
+padding-left: 30px;
+padding-right: 30px;
+font-size: small;
+color: black;
+}
+
+.Show_answer:hover{
+  background-image: linear-gradient(to left,#38f000,#b5fda3);
+  border:none;
+  color: black;
+}
     /** =====================
      * Responsive
      ========================*/
