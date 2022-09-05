@@ -7,5 +7,4 @@ def send_message(request):
         form = AnonymousTalkForm(request.POST)
         if form.is_valid():
             data = form.save()
-            print("\n\n", data.id, "\n\n")
     return render(request, "say-anonymous.html")
