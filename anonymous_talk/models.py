@@ -12,7 +12,7 @@ class AnonymousTalk(models.Model):
             is_unique = False
             while not is_unique:
                 id = randint(10000, 1000000)
-                is_unique = AnonymousTalk.objects.filter(id=id).exists()
+                is_unique = not AnonymousTalk.objects.filter(id=id).exists()
             self.id = id
         super(AnonymousTalk, self).save()
 
