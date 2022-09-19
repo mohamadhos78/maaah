@@ -1008,9 +1008,10 @@
     margin-right: 28%;
   }
   .eita-aydi{
-    color: #6c757d;
+    color: #6c757d !important;
     font-size: x-small;
     text-align: center;
+
   }
   .eita-aydi:hover{
     text-decoration: none;
@@ -1077,7 +1078,7 @@ margin-right: 15px;
   background: #303338;
   border: none;
   border-radius:15px;
-  width: 94%;
+  width: -moz-available;
   color: white;
 }
 .title-answer{

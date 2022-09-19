@@ -4,29 +4,29 @@
         <div class=" text-muted ">
             <div class="modal-dialog">
                 <div class="modal-content modal-box-chat">
-                <div class="col" >
-                    <div class="row mt-4 mx-4 div-challenger pt-2">
-                        <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
-                    </div>
-                    {% if not id %}
-                        <div class="row">
-                            <div class="col " >
-                                <form action={% url 'see-answer' %} method="POST">        
-                                    {% csrf_token %}                                                             
-                                    <div class="form-group  mt-4 mx-3" >   
-                                        <label class="answer-code-lable py-2" for="">لطفا کد سوال خود را وارد نمایید.</label>            
-                                    <textarea  type="text" id="message" name="message_id" class="form-control textarea-code  mx-2 " placeholder="XXXXX" ></textarea>
-                                    </div>
-                                    <div class="col mb-2 buttons-chat ">
-                                        <button id="button" class=" mr-1 ml-1  py-2 Show_answer" type="submit">
-                                        نمایش پاسخ
-                                        </button>                            
-                                    </div>        
-                                </form>
-                            </div>
+                    <div class="col" >
+                        <div class="row mt-4 mx-4 div-challenger pt-2">
+                            <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
                         </div>
-                    {% endif %}
-                    {% if answer.reply %}
+                        {% if not id %}
+                            <div class="row">
+                                <div class="col " >
+                                    <form action={% url 'see-answer' %} method="POST">        
+                                        {% csrf_token %}                                                             
+                                        <div class="form-group  mt-4 mx-3" >   
+                                            <label class="answer-code-lable py-2" for="">لطفا کد سوال خود را وارد نمایید.</label>            
+                                            <textarea  type="text" id="message" name="message_id" class="form-control textarea-code  mx-2 " placeholder="XXXXXX" ></textarea>
+                                        </div>
+                                        <div class="col mb-2 buttons-chat ">
+                                            <button id="button" class=" mr-1 ml-1  py-2 Show_answer" type="submit">
+                                            نمایش پاسخ
+                                            </button>                            
+                                        </div>        
+                                    </form>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if answer.reply %}
                         <div class="Text">
                             <h5 class="py-2 title-answer">پاسخ حاج آقا راضی به سوال شما</h5>
                             <div class="col text_Haj_Agha_answer ">
@@ -34,24 +34,24 @@
                                     {{answer.reply}}
                                 </p>
                             </div>
-                    {% else %}
-                    <div>
-                        <br>
-                    </div>
-                    {% endif %}
-                    </div>
-                </div>   
-                <div class="Text">                                                                                                                    
-                    <div class="col mb-2 delgooyeh-footer">
-                    <p class="title-chat-maaah2">موسسه فرهنگی هنری ماه</p>   
-                                                    
-                    <a href="https://eitaa.com/noore_maaah" class="eata-aydi mb-1">                                      
-                        noore_maaah@
-                        <img class="img-eata-chat" src=./img/eita-chat.png alt="ایتا">
-                    </a>
-                
-                    </div>                                          
-                </div>                                                             
+                        {% else %}
+                        <div>
+                            <br>
+                        </div>
+                        {% endif %}
+                        </div>
+                        <div class="Text">                                                                                                                    
+                            <div class="col mb-2 delgooyeh-footer">
+                            <p class="title-chat-maaah2">موسسه فرهنگی هنری ماه</p>   
+                                                            
+                            <a href="https://eitaa.com/noore_maaah" class="eita-aydi mb-1">                                      
+                                noore_maaah@
+                                <img class="img-eata-chat" src=/static/img/eita-chat.png alt="ایتا">
+                            </a>
+                        
+                            </div>                                          
+                        </div>  
+                    </div>                                                             
                 </div>
             </div>  
         </div>
