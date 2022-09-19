@@ -8,14 +8,24 @@
                         <div class="row mt-4 mx-4 div-challenger pt-2">
                             <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
                         </div>
-                        {% if not id %}
                             <div class="row">
+                                <div><br></div>
+                                {% for message in messages %}
+                                    <div class="container-fluid p-0">
+                                    <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="True">&times;</span>
+                                        </button>
+                                        {{ message }}
+                                    </div>
+                                    </div>
+                                {% endfor %}
                                 <div class="col " >
                                     <form action={% url 'see-answer' %} method="POST">        
                                         {% csrf_token %}                                                             
                                         <div class="form-group  mt-4 mx-3" >   
                                             <label class="answer-code-lable py-2" for="">لطفا کد سوال خود را وارد نمایید.</label>            
-                                            <textarea  type="text" id="message" name="message_id" class="form-control textarea-code  mx-2 " placeholder="XXXXXX" ></textarea>
+                                            <textarea  type="text" id="message" name="message_id" class="form-control textarea-code  mx-2 " placeholder={% if id %}{{id}}{% else %}"XXXXXX"{% endif %} ></textarea>
                                         </div>
                                         <div class="col mb-2 buttons-chat ">
                                             <button id="button" class=" mr-1 ml-1  py-2 Show_answer" type="submit">
@@ -25,7 +35,6 @@
                                     </form>
                                 </div>
                             </div>
-                        {% endif %}
                         {% if answer.reply %}
                         <div class="Text">
                             <h5 class="py-2 title-answer">پاسخ حاج آقا راضی به سوال شما</h5>

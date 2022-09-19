@@ -5,6 +5,17 @@
                 <div class="modal-dialog">
                     <div class="modal-content modal-box-chat">
                         <div class="col" >
+                        {% for message in messages %}
+                            <div><br></div>
+                            <div class="container-fluid p-0">
+                            <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="True">&times;</span>
+                                </button>
+                                {{ message }}
+                            </div>
+                            </div>
+                        {% endfor %}
                             <div class="row mt-4 items-chat-style mx-4 info-box-profile ">
                             <div class="col-3 text-center">
                                 <img class="profile-img my-2" src=/static/img/hajAgha.png alt=""  />
