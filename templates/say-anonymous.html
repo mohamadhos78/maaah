@@ -1,5 +1,31 @@
-    {% extends 'base.html'%}
-    {% block main%}
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/> 
+        <link href="//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href={% static "./css/landing.css" %}/>
+        <link rel="stylesheet" href={% static "./css/style.css" %}/>
+        <script src={% static "js/jquery-3.5.1.js" %}></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src={% static "js/bootstrap.min.js"%}></script>
+        <script src={% static "./js/script.js"%}></script>
+        <link href={% static "./img/logo.png"%} rel="shortcut icon" />
+        {% if home_page_information %}
+          <title>{{home_page_information.title}}</title>
+        {% else %} 
+          <title>حرف ناشناس</title>
+        {% endif %}
+    </head>
+    <body>
+         
         <section>
             <div class=" text-muted ">
                 <div class="modal-dialog">
@@ -7,13 +33,19 @@
                         <div class="col" >
                         {% for message in messages %}
                             <div><br></div>
-                            <div class="container-fluid p-0">
-                            <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="True">&times;</span>
-                                </button>
-                                {{ message }}
-                            </div>
+                            <div class="container-fluid p-0  ">
+                                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="True">&times;</span>
+                                    </button>
+                                    <div class="alert-icon text-center">
+                                        <i class="fa fa-check-square" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="alert-message text-center">
+                                        <strong></strong>   {{ message }}
+                                      </div>
+                                  
+                                </div>
                             </div>
                         {% endfor %}
                             <div class="row mt-4 items-chat-style mx-4 info-box-profile ">
@@ -37,12 +69,12 @@
                                 <div class="col mt-4 items-chat-style item-box-delgooye" >
                                 <div class="row">
                                     <div class="col">
-                                    <img class="delgooyeh-img text-center" src=/static/img/delgooyeh.png alt=""  />
+                                    <img class="delgooyeh-img text-center mt-1" src=/static/img/delgooyeh.png alt=""  />
                                     
                                     </div>                                                                                        
                                 </div>
                                 <div class="col ">
-                                    <p class="delgooyeh-text mt-4">هر چه میخواهد دل تنگت بگو</p>
+                                    <p class="delgooyeh-text mt-1">هر چه میخواهد دل تنگت بگو</p>
                                 </div>
                                 <div class="col">
                                     <p class="delgooyeh-talk " > 
@@ -56,7 +88,7 @@
                             <div class="Text">
                             <form action="{% url 'send-anonymous-message' %}" method="POST">                                                                     
                                 {% csrf_token %} 
-                                <div class="form-group form-chat mt-4" >               
+                                <div class="form-group form-chat mt-2" >               
                                     <textarea  type="text" id="message" name="talk" class="p-3 textarea-chat form-control-1 items-chat-style mx-2 " placeholder="پیام خودتو بنویس " ></textarea>
                                 </div>
                                 <div class="col mb-2 buttons-chat ">
@@ -85,5 +117,53 @@
                 </div>  
             </div>
         </section>
+        <!--footer-->
+        <section class="section">
+        <footer class="mt-5">
+            <div class="col">
+            <div class="row">
+                
+                <p class="sokhan-rahbar col-sm-4 text-white text-footer text-center mt-5">
+                    حضرت امام خامنه ای(مدضله العالی):
+                    <br/>
+                        عرصه فرهنگی،عرصه جهاد است
+                        <br/>
+                        لذا کسانی که در عرصه فرهنگی حضور داشته
+                        <br/>
+                        و مدیریت می نمایند باید حق جهاد را به جا آورند.
+                </p>
+                    
+                <div class="col col-sm-4" id="Connection-Month">
+                    <div  id="links" class="p-2 text-center" >
+                        <h3 class="text-white text-footer  mt-5">ما را در شبکه های اجتماعی دنبال کنید.</h3>
+                        <div class="d-flex justify-content-center mt-3">
+                        <div class="p-2">
+                            <a href={{home_page_information.eitaa}}><img class="footer-img" src={% static "./img/eita.png" %} alt="ایتا"></a>
+                            </div>
+                            <div class="p-2">
+                            <a href={{home_page_information.telegram}}><img class="footer-img" src={% static "./img/telegram.png" %} alt="ایتا"></a>
+                            </div>
+                            
+                            <div class="p-2">
+                            <a href={{home_page_information.instagram}}><img class="footer-img" src={% static "./img/insta.png" %} alt="اینستاگرام"></i></a>
+                            </div>                  
+                        </div>
+                    </div>
+                </div> 
+                <div class="col col-sm-4 text-white text-footer text-center  mt-5 ">
+                    <h5 class="text-white">
+                        ارتباط با ما:
+                    </h5>
+                    <p>
+                    {{home_page_information.phone_number}}
+                    </p>
+                    <p>در تلگرام و ایتا :<br/>r-o-mah@</p>
+                </div>
+            
+            </div>
+            </div> 
 
-    {% endblock %}
+        </footer>
+        </section>
+    </body>
+</html>

@@ -1,68 +1,142 @@
-{% extends 'base.html'%}
-{% block main%}
-    <section>
-        <div class=" text-muted ">
-            <div class="modal-dialog">
-                <div class="modal-content modal-box-chat">
-                    <div class="col" >
-                        <div class="row mt-4 mx-4 div-challenger pt-2">
-                            <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
-                        </div>
-                            <div class="row">
-                                <div><br></div>
-                                {% for message in messages %}
-                                    <div class="container-fluid p-0">
-                                    <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="True">&times;</span>
-                                        </button>
-                                        {{ message }}
-                                    </div>
-                                    </div>
-                                {% endfor %}
-                                <div class="col " >
-                                    <form action={% url 'see-answer' %} method="POST">        
-                                        {% csrf_token %}                                                             
-                                        <div class="form-group  mt-4 mx-3" >   
-                                            <label class="answer-code-lable py-2" for="">لطفا کد سوال خود را وارد نمایید.</label>            
-                                            <textarea  type="text" id="message" name="message_id" class="form-control textarea-code  mx-2 " placeholder={% if id %}{{id}}{% else %}"XXXXXX"{% endif %} ></textarea>
+<!DOCTYPE html>
+{% load static %}
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/> 
+        <link href="//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href={% static "./css/landing.css" %}/>
+        <link rel="stylesheet" href={% static "./css/style.css" %}/>
+        <script src={% static "js/jquery-3.5.1.js" %}></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src={% static "js/bootstrap.min.js"%}></script>
+        <script src={% static "./js/script.js"%}></script>
+        <link href={% static "./img/logo.png"%} rel="shortcut icon" />
+        {% if home_page_information %}
+          <title>{{home_page_information.title}}</title>
+        {% else %} 
+          <title>جواب حاج آقا به شما </title>
+        {% endif %}
+    </head>
+    <body>
+        <section>
+            <div class=" text-muted ">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-box-chat">
+                        <div class="col" >
+                            <div class="row mt-4 mx-4 div-challenger pt-2">
+                                <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
+                            </div>
+                                <div class="row">
+                                    <div><br></div>
+                                    {% for message in messages %}
+                                        <div class="container-fluid p-0">
+                                        <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="True">&times;</span>
+                                            </button>
+                                            {{ message }}
                                         </div>
-                                        <div class="col mb-2 buttons-chat ">
-                                            <button id="button" class=" mr-1 ml-1  py-2 Show_answer" type="submit">
-                                            نمایش پاسخ
-                                            </button>                            
-                                        </div>        
-                                    </form>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="col " >
+                                        <form action={% url 'see-answer' %} method="POST">        
+                                            {% csrf_token %}                                                             
+                                            <div class="form-group  mt-4 mx-3" >   
+                                                <label class="answer-code-lable py-2" for="">لطفا کد سوال خود را وارد نمایید.</label>            
+                                                <textarea  type="text" id="message" name="message_id" class="form-control textarea-code  mx-2 " placeholder={% if id %}{{id}}{% else %}"XXXXXX"{% endif %} ></textarea>
+                                            </div>
+                                            <div class="col mb-2 buttons-chat ">
+                                                <button id="button" class=" mr-1 ml-1  py-2 Show_answer" type="submit">
+                                                نمایش پاسخ
+                                                </button>                            
+                                            </div>        
+                                        </form>
+                                    </div>
                                 </div>
+                            {% if answer.reply %}
+                            <div class="Text ">
+                                <h5 class="py-2 title-answer">پاسخ حاج آقا راضی به سوال شما</h5>
+                                <div class="col text_Haj_Agha_answer ">
+                                    <p>
+                                        {{answer.reply}}
+                                    </p>
+                                </div>
+                            {% else %}
+                            <div>
+                                <br>
                             </div>
-                        {% if answer.reply %}
-                        <div class="Text">
-                            <h5 class="py-2 title-answer">پاسخ حاج آقا راضی به سوال شما</h5>
-                            <div class="col text_Haj_Agha_answer ">
-                                <p>
-                                    {{answer.reply}}
-                                </p>
+                            {% endif %}
                             </div>
-                        {% else %}
-                        <div>
-                            <br>
-                        </div>
-                        {% endif %}
-                        </div>
-                        <div class="Text">                                                                                                                    
-                            <div class="col mb-2 delgooyeh-footer">
-                            <p class="title-chat-maaah2">موسسه فرهنگی هنری ماه</p>   
-                                                            
-                            <a href="https://eitaa.com/noore_maaah" class="eita-aydi mb-1">                                      
-                                noore_maaah@
-                                <img class="img-eata-chat" src=/static/img/eita-chat.png alt="ایتا">
-                            </a>
+                            <div class="Text mt-5">                                                                                                                    
+                                <div class="col mb-2 delgooyeh-footer">
+                                <p class="title-chat-maaah2">موسسه فرهنگی هنری ماه</p>   
+                                                                
+                                <a href="https://eitaa.com/noore_maaah" class="eita-aydi mb-1">                                      
+                                    noore_maaah@
+                                    <img class="img-eata-chat" src=/static/img/eita-chat.png alt="ایتا">
+                                </a>
+                            
+                                </div>                                          
+                            </div>  
+                        </div>                                                             
+                    </div>
+                </div>  
+            </div>
+        </section>
+        <!--footer-->
+        <section class="section">
+            <footer class="mt-5">
+                <div class="col">
+                <div class="row">
+                    
+                    <p class="sokhan-rahbar col-sm-4 text-white text-footer text-center mt-5">
+                        حضرت امام خامنه ای(مدضله العالی):
+                        <br/>
+                            عرصه فرهنگی،عرصه جهاد است
+                            <br/>
+                            لذا کسانی که در عرصه فرهنگی حضور داشته
+                            <br/>
+                            و مدیریت می نمایند باید حق جهاد را به جا آورند.
+                    </p>
                         
-                            </div>                                          
-                        </div>  
-                    </div>                                                             
+                    <div class="col col-sm-4" id="Connection-Month">
+                        <div  id="links" class="p-2 text-center" >
+                            <h3 class="text-white text-footer  mt-5">ما را در شبکه های اجتماعی دنبال کنید.</h3>
+                            <div class="d-flex justify-content-center mt-3">
+                            <div class="p-2">
+                                <a href={{home_page_information.eitaa}}><img class="footer-img" src={% static "./img/eita.png" %} alt="ایتا"></a>
+                                </div>
+                                <div class="p-2">
+                                <a href={{home_page_information.telegram}}><img class="footer-img" src={% static "./img/telegram.png" %} alt="ایتا"></a>
+                                </div>
+                                
+                                <div class="p-2">
+                                <a href={{home_page_information.instagram}}><img class="footer-img" src={% static "./img/insta.png" %} alt="اینستاگرام"></i></a>
+                                </div>                  
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col col-sm-4 text-white text-footer text-center  mt-5 ">
+                        <h5 class="text-white">
+                            ارتباط با ما:
+                        </h5>
+                        <p>
+                        {{home_page_information.phone_number}}
+                        </p>
+                        <p>در تلگرام و ایتا :<br/>r-o-mah@</p>
+                    </div>
+                
                 </div>
-            </div>  
-        </div>
-    </section>
-{% endblock %}
+                </div> 
+    
+            </footer>
+        </section>
+    </body>
+</html>    
