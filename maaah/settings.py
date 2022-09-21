@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=pktw!j!mnl#4v4n98=7ax&(7#*a*b^(1b8(8@#-xlig=*^w=u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["maaah.pythonanywhere.com", 'localhost']
 
@@ -133,6 +133,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if DEBUG: 
+   STATIC_ROOT = os.path.join(BASE_DIR, '/static')
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 
 # Messges
 from django.contrib.messages import constants as messages
