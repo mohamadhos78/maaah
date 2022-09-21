@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db.models import Q
 
+
+@login_required
 def index(request):
     home_page_information = get_object_or_404(GeneralInformation, id=1)
     stories = Story.objects.all()
@@ -23,7 +25,8 @@ def teacher(request):
         "sessions" : sessions ,
     }
     return render(request, 'teacher.html', context)
-    
+
+@login_required    
 def courses(request):
     q = request.GET.get('q')
     name = request.GET.get('name')
@@ -41,6 +44,7 @@ def courses(request):
     }
     return render(request, 'eshghology.html', context)
 
+@login_required
 def your_talks(request):
 
     if request.method == "POST":
