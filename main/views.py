@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 
 
-@login_required
+@login_required(login_url="/admin/")
 def index(request):
     home_page_information = get_object_or_404(GeneralInformation, id=1)
     stories = Story.objects.all()
@@ -18,7 +18,7 @@ def index(request):
     }
     return render(request, 'landing.html', context)
 
-@login_required
+@login_required(login_url="/admin/")
 def teacher(request):
     sessions = Session.objects.all()
     context ={
@@ -26,7 +26,7 @@ def teacher(request):
     }
     return render(request, 'teacher.html', context)
 
-@login_required    
+@login_required(login_url="/admin/")    
 def courses(request):
     q = request.GET.get('q')
     name = request.GET.get('name')
@@ -44,7 +44,7 @@ def courses(request):
     }
     return render(request, 'eshghology.html', context)
 
-@login_required
+@login_required(login_url="/admin/")
 def your_talks(request):
 
     if request.method == "POST":
