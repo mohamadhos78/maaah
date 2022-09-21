@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import AnonymousTalkForm
 from .models import AnonymousTalk
+from main.models import GeneralInformation
 from django.contrib import messages
 
 def send_message(request):
@@ -16,7 +17,12 @@ def send_message(request):
             توجه داشته باشید کد مشاهده پاسخ قابل بازیابی نمی باشد در حفظ آن کوشا باشید.
             """
         )
-    return render(request, "say-anonymous.html")
+    
+    home_page_information = get_object_or_404(GeneralInformation, id=1)
+    context = {
+        "home_page_information" : home_page_information
+    }
+    return render(request, "say-anonymous.html", context)
 
 def see_answer(request):
     id = request.POST.get('message_id', None)
@@ -42,9 +48,11 @@ def see_answer(request):
                     )
     else:
         answer = None
+    home_page_information = get_object_or_404(GeneralInformation, id=1)
         
     context = {
         "id" : id,
-        "answer" : answer
+        "answer" : answer,
+        "home_page_information" : home_page_information
     }
     return render(request, "Haj_Agha's_answer.html", context)
