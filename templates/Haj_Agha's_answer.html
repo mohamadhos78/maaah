@@ -25,26 +25,26 @@
         {% endif %}
     </head>
     <body>
-        <section>
-            <div class=" text-muted ">
-                <div class="modal-dialog">
+        <section>        
+                <div class="modal-dialog">              
+                    {% for message in messages %}
+                        <div class="container-fluid p-0">
+                            <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                                <div class="alert-message text-center message-{{ message.tags }} px-3 pb-3">                              
+                                    <br/>
+                                    {{ message }}
+                            </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     <div class="modal-content modal-box-chat">
                         <div class="col" >
                             <div class="row mt-4 mx-4 div-challenger pt-2">
                                 <p class="title-challenger">چالش حرف ناشناس</p>                                                                                                    
                             </div>
                                 <div class="row">
-                                    <div><br></div>
-                                    {% for message in messages %}
-                                        <div class="container-fluid p-0">
-                                        <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="True">&times;</span>
-                                            </button>
-                                            {{ message }}
-                                        </div>
-                                        </div>
-                                    {% endfor %}
+                                  
                                     <div class="col " >
                                         <form action={% url 'see-answer' %} method="POST">        
                                             {% csrf_token %}                                                             
@@ -88,7 +88,7 @@
                         </div>                                                             
                     </div>
                 </div>  
-            </div>
+         
         </section>
         <!--footer-->
         <section class="section">

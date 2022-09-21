@@ -27,27 +27,27 @@
     <body>
          
         <section>
-            <div class=" text-muted ">
+               
+                  
                 <div class="modal-dialog">
+                    {% for message in messages %}
+                  
+                    <div class="container-fluid  ">
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert" >                                                 
+                                               
+                            <div class="alert-message text-center message-{{ message.tags }} px-3 pb-3">
+                                
+                                    <i class="p-2 fa fa-check-square fa-icon-message" aria-hidden="true"></i>
+                                    <br/>
+                                    {{ message }}
+                            </div>  
+                                              
+                        </div>
+                    </div>
+                  {% endfor %}
                     <div class="modal-content modal-box-chat">
                         <div class="col" >
-                        {% for message in messages %}
-                            <div><br></div>
-                            <div class="container-fluid p-0  ">
-                                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="True">&times;</span>
-                                    </button>
-                                    <div class="alert-icon text-center">
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                      </div>
-                                      <div class="alert-message text-center">
-                                        <strong></strong>   {{ message }}
-                                      </div>
-                                  
-                                </div>
-                            </div>
-                        {% endfor %}
+                       
                             <div class="row mt-4 items-chat-style mx-4 info-box-profile ">
                             <div class="col-3 text-center">
                                 <img class="profile-img my-2" src=/static/img/hajAgha.png alt=""  />

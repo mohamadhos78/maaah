@@ -9,8 +9,11 @@ def send_message(request):
         if form.is_valid():
             data = form.save()
         messages.success(request, 
-            f"""پیام شما با موفقیت برای حاج اقا ارسال شد،
-            شما می‌توانید از طریق {data.id} پاسخ حاج اقا را مشاهده کنید
+            f"""پیام شما با موفقیت برای حاج آقا ارسال شد،
+            شما می‌توانید از طریق {data.id} 
+            پاسخ حاج آقا را مشاهده کنید.
+            
+            توجه داشته باشید کد مشاهده پاسخ قابل بازیابی نمی باشد در حفظ آن کوشا باشید.
             """
         )
     return render(request, "say-anonymous.html")
@@ -24,18 +27,18 @@ def see_answer(request):
             answer = None
             messages.error(
                 request,
-                "کد وارد شده صحیح نمی‌باشد"
+                "کد وارد شده صحیح نمی باشد."
                 )
         else:
             if answer.reply:
                 messages.success(
                     request, 
-                    "نبریک میگم، حاج اقا به پیامت جواب داده"
+                    "تبریک میگم ، حاج آقا به پیامت جواب داده"
                 )
             else:
                 messages.info(
                     request,
-                    "متاسفانه هنوز به پیام شما پاسخی داده نشده است"
+                   " متاسفانه هنوز به پیام شما پاسخی داده نشده است."
                     )
     else:
         answer = None
