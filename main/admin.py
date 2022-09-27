@@ -6,9 +6,11 @@ admin.site.register(Story)
 
 admin.site.register(Report)
 
-class TalkAdmin(admin.ModelAdmin):
+class TalkAdmin(admin.ModelAdmin):  
     list_display = ('talk', 'name', 'is_published')
+    list_editable = ('is_published', )
     list_filter = ('is_published',)
+    list_per_page = 15
     
 
 admin.site.register(Talk, TalkAdmin)
