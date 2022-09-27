@@ -91,10 +91,10 @@ class GeneralInformation(models.Model):
 class Video(models.Model):
     title = models.CharField(max_length=70, null=False, blank=False)
     description = models.TextField()
-    video = models.FileField(upload_to="videos", null=False, blank=False)
+    file = models.FileField(upload_to="videos", null=False, blank=False)
 
 
 class Voice(models.Model):
     title = models.CharField(max_length=70, null=False, blank=False)
     description = models.TextField()
-    voive = models.FileField(upload_to="voices", null=False, blank=False)
+    file = models.FileField(upload_to="voices", null=False, blank=False)
