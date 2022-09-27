@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Story, Report, Talk, Session, GeneralInformation
+from .models import (
+    Story, Report, Talk, Session, GeneralInformation, Video, Voice
+    )
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
@@ -11,10 +13,12 @@ def index(request):
     home_page_information = get_object_or_404(GeneralInformation, id=1)
     stories = Story.objects.all()
     reports = Report.objects.all()
+    videos = Video.objects.all()
     context ={
         "stories" : stories,
         "reports" : reports,
-        "home_page_information" : home_page_information
+        "home_page_information" : home_page_information,
+        "videos" : videos 
     }
     return render(request, 'landing.html', context)
 

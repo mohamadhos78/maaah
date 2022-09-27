@@ -194,22 +194,24 @@
                                 <h5 class="text-center mt-2 titr-reports py-2 px-4 text-white" >فیلم </h5>                           
                               </div>                         
                               <div class="accordion-body">
+                                {% for video in videos %}
                                 <div class="row main1 mt-3 pt-2 pb-2 mx-2 text-center justify-content-around">
                                   <div class="col card">
                                     <div class="card-header text-white">
                                         <h5>عنوان گزارش</h5>
                                     </div>
-                                    <div class="card-body ">
-                                      <video controls  class="video">
-                                        <source src={% static "video/16.mp4"%} type="video/mp4">
-                                      </video>
-                                    </div>
-                                    <div class="card-footer text-white">
-                                      <p class="Description">توضیح اجمالی از جلسه</p>
+                                      <div class="card-body ">
+                                        <video controls  class="video">
+                                          <source src={{video.file.url}} type="video/mp4">
+                                        </video>
+                                      </div>
+                                      <div class="card-footer text-white">
+                                        <p class="Description">توضیح اجمالی از جلسه</p>
+                                      </div>
                                     </div>
                                   </div>
-                              </div>
-                              </div>
+                                </div>
+                                {% endfor %}
                             </div>                      
                             <div class="accordion-box">
                               <div class="accordion-heading" data-open="open">
@@ -222,11 +224,13 @@
                                       <div class="card-header text-white">
                                         <h5>عنوان گزارش</h5>
                                       </div>
-                                      <div class="card-body ">
-                                        <audio controls  >
-                                          <source src={% static "audio/16.mp4" %} type="audio/mp4">
-                                        </audio>
-                                      </div>
+                                      {% for voice in voices %}
+                                        <div class="card-body ">
+                                          <audio controls  >
+                                            <source src={{voice.file.url}} type="audio/mp4">
+                                          </audio>
+                                        </div>
+                                      {% endfor %}
                                       <div class="card-footer text-white">
                                         <p class="Description">توضیح اجمالی از جلسه</p>
                                       </div>
