@@ -14,11 +14,13 @@ def index(request):
     stories = Story.objects.all()
     reports = Report.objects.all()
     videos = Video.objects.all()
+    voices = Voice.objects.all()
     context ={
         "stories" : stories,
         "reports" : reports,
         "home_page_information" : home_page_information,
-        "videos" : videos 
+        "videos" : videos ,
+        "voices" : voices 
     }
     return render(request, 'landing.html', context)
 
