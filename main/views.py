@@ -60,8 +60,10 @@ def your_talks(request):
             talk_form.save()
 
     talks = reversed(Talk.objects.filter(is_published=True))
+    home_page_information = get_object_or_404(GeneralInformation, id=1)
 
     context = {
         "talks" : talks,
+        "home_page_information" : home_page_information,
     }
     return render(request, 'Your_talk.html', context)
