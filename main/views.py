@@ -38,7 +38,8 @@ def courses(request):
     name = request.GET.get('name')
     home_page_information = get_object_or_404(GeneralInformation, id=1)
     if q:
-        sessions = Session.objects.filter(Q(description__icontains=q) | Q(description__icontains=q))
+        sessions = Session.objects.filter(
+            Q(description__icontains=q) | Q(title__icontains=q))
     elif name:
         sessions = Session.objects.filter(Q(description__contains=name))
     else:
