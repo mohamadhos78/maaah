@@ -17,6 +17,13 @@
      format("woff2"), url("//db.onlinewebfonts.com/t/3b019b0df3b0d6ea4d1b2f051132febb.woff") format("woff"), 
      url("//db.onlinewebfonts.com/t/3b019b0df3b0d6ea4d1b2f051132febb.ttf") format("truetype"),
      url("//db.onlinewebfonts.com/t/3b019b0df3b0d6ea4d1b2f051132febb.svg#IranNastaliq") format("svg"); }
+   
+    html{
+      scrollbar-width: none;
+    }
+    .scrollbar{
+      scrollbar-width: auto;
+    }
      body {
       text-align: right !important;
       line-height: 1.6;
@@ -40,7 +47,6 @@
   }
   #input-search{
     border-radius:25px;
-    background-color: #ffffffe6;
     border: 1px solid #002856; 
   }
   #home {
@@ -461,7 +467,7 @@
     .reports-box{
       border-radius: 15px;
       border: 1px solid black;
-      background: #37a2a714;
+      background: #bdf6f985;
       box-shadow: 6px 5px 3px black;
   }
     
@@ -525,18 +531,15 @@
       width: 100%;
       
     }
-    .row__inner {
-     
+    .row__inner { 
       font-size: 0;
       white-space: nowrap;
-      margin: 70.3125px 0;
       padding-bottom: 32px;
     }
     .tile {
       position: relative;
       display: inline-block;
-      width: 180px;
-      height: 150px;
+     
       margin-right: 10px;
       font-size: 20px;
       cursor: pointer;
@@ -544,12 +547,10 @@
      
     }
     .tile__img {
-      width:200px;
+      width:250px;
       height:200px;
-      -o-object-fit: cover;
-         object-fit: cover;
-          box-shadow: 10px 10px 5px -5px #666;
-        border-radius: 8px;
+      box-shadow: 10px 10px 5px -5px #666;
+      border-radius: 8px;
     }
     .tile__img:hover {
       box-shadow: 15px 15px 5px -8px rgb(26, 25, 25);
@@ -559,7 +560,24 @@
     }
     
     /*colapse*/
-    
+    .row_wrapper::-webkit-scrollbar{
+      width: 0;
+      height: 3vh;
+    }
+    ::-webkit-scrollbar-track{
+      background-color: rgb(192, 192, 192);
+      border-radius: 10em;
+      margin: 1em 0;
+    }
+    ::-webkit-scrollbar-thumb{
+      background-color: rgb(0, 150, 155);
+      border-radius: 10em;
+    }
+.box-shadow-report-box{
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px black;
+  background: #ffffff;
+}
   #accordion{
     width: 100%;
     margin: 40px auto 0 auto;
@@ -595,9 +613,14 @@
   .accordion-box .accordion-body p{
     color: rgb(0, 0, 0);
   }
-  video{
-    width: 200px;
-    height: 200px;
+  .video{
+    width: 17em;
+    height: 20em;
+    border-radius: 20px;
+
+  }
+  .video-size-sm{
+    margin-right: 9%;
   }
     /*end-collapse*/
     .carousel{

@@ -189,62 +189,70 @@
                                 </div>
                             </div>
                             
-                            <div class="accordion-box">
+                            <div class="accordion-box" dir="ltr">
                               <div class="accordion-heading" data-open="open">
                                 <h5 class="text-center mt-2 titr-reports py-2 px-4 text-white" >فیلم </h5>                           
                               </div>                         
-                              <div class="accordion-body">
-                                {% for video in videos %}
-                                <div class="row main1 mt-3 pt-2 pb-2 mx-2 text-center justify-content-around">
-                                  <div class="col card">
-                                    <div class="card-header text-white">
-                                        <h5>عنوان گزارش</h5>
-                                    </div>
-                                      <div class="card-body ">
-                                        <video controls  class="video">
-                                          <source src={{video.file.url}} type="video/mp4">
-                                        </video>
+                              <div >
+                                <div class="contain" dir="ltr">
+                                  <div class="row_wrapper">
+                                  <div class="row__inner">             
+                                  {% for video in videos %}
+                                      <div class="card tile box-shadow-report-box">
+                                        <div class="card-header text-white justify-content-around text-center">
+                                            <h5>{{video.title}} </h5>
+                                        </div>
+                                        <div class="card-body align-content-center ml-2">
+                                          <video controls class="video video-size-sm">
+                                            <source src={{video.file.url}} type="video/mp4">
+                                          </video>
+                                        </div>
+                                        <div class="card-footer text-white">                   
+                                          <p class="Description justify-content-around text-center " data-toggle="tooltip" title="{{video.description}}"> میخوای توضیحات این ویدئو رو بخونی 
+                                            <strong>کلیک کن</strong>  
+                                            <p>
+                                        </div>
                                       </div>
-                                      <div class="card-footer text-white">
-                                        <p class="Description">توضیح اجمالی از جلسه</p>
-                                      </div>
-                                    </div>
+                                  {% endfor %}
                                   </div>
+                                  </div>
+                                
                                 </div>
-                                {% endfor %}
-                            </div>                      
+                              </div>
+                            </div>                   
                             <div class="accordion-box">
                               <div class="accordion-heading" data-open="open">
                                 <h5 class="text-center mt-2 titr-reports py-2 px-4 text-white bold" >صوت</h5>
                               </div>                        
-                              <div class="accordion-body">
-                                  <!--صوت+متن-->
-                                  <div class="row main1 mt-3 pt-2 pb-2 mx-2 text-center justify-content-around"> 
-                                    <div class="col card">
-                                      {% for voice in voices %}
-                                      <div class="card-header text-white">
-                                        <h5>{{voice.title}}</h5>
-                                      </div>
-                                        <div class="card-body ">
-                                          <audio controls  >
-                                            <source src={{voice.file.url}} type="audio/mp4">
-                                          </audio>
-                                        </div>
-                                        <div class="card-footer text-white">
-                                          <p class="Description">{{voice.description}}</p>
-                                        </div>
-                                      {% endfor %}
+                              <div >
+                                <div class="contain" dir="ltr">
+                                  <div class="row_wrapper">
+                                    <div class="row__inner">             
+                                        {% for voice in voices %}
+                                            <div class="card tile box-shadow-report-box">
+                                              <div class="card-header text-white justify-content-around text-center">
+                                                  <h5>{{voice.title}} </h5>
+                                              </div>
+                                              <div class="card-body align-content-center ml-2">
+                                                <audio controls  >
+                                                  <source src={{voice.file.url}} type="audio/mp4">
+                                                </audio>
+                                              </div>
+                                              <div class="card-footer text-white">
+                                                  <p class="Description justify-content-around text-center " data-toggle="tooltip" title="{{voice.description}}"> میخوای توضیحات این صوت رو بخونی 
+                                                    <strong>کلیک کن</strong>  
+                                                    <p>
+                                              </div>
+                                            </div>
+                                        {% endfor %}
                                     </div>
-                                  </div>
-                                    <!--end-->
+                                  </div>                                  
+                                </div>
                               </div>
-                            </div>
-                            
+                          </div>   
                           </div>
                         </div>             
-                  </div>
-
-                  
+                  </div>                 
               </div>
             </section>      
            </div>           
@@ -297,5 +305,11 @@
         
             </footer>
            </section>
+           <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();   
+            });
+            </script>
     </body>
+  
 </html>

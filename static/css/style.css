@@ -82,8 +82,7 @@
 }
 .card{
   background-color:transparent;
-  border: none;
-  
+  border-radius:35px;
 }
 .img{
   width:50%;
@@ -91,7 +90,6 @@
   border-radius: 15px;
 }
 .description{
- 
   border-radius:15px;
 }
 .card-header{
