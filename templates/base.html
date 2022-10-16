@@ -3,23 +3,19 @@
 {% load static %}
 <html lang="fa" dir="rtl">
     <head>
+       
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" > 
-        <link href="//db.onlinewebfonts.com/c/3b019b0df3b0d6ea4d1b2f051132febb?family=IranNastaliq" rel="stylesheet" type="text/css" >
-        <link href="//db.onlinewebfonts.com/c/5c53f1a72f61b5b51e2ea79a22ebc38b?family=IRANSansWeb(FaNum)" rel="stylesheet" type="text/css" >
-        <link rel="stylesheet" href={% static "./css/landing.css" %}>
-        <link rel="stylesheet" href={% static "./css/style.css" %}>
+        <link rel="stylesheet" href={% static "css/bootstrap.min.css" %} />
+        <link rel="stylesheet" href={% static "css/all.css" %} /> 
+        <link rel="stylesheet" href={% static "./css/styles.css" %} />
+        <link rel="stylesheet" href={% static "./css/other-styles.css" %} />
         <script src={% static "js/jquery-3.5.1.js" %}></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        <script src={% static "js/popper.min.js" %}></script>
         <script src={% static "js/bootstrap.min.js"%}></script>
         <script src={% static "./js/script.js"%}></script>
-        <link href={% static "./img/logo.png"%} rel="shortcut icon" >
+        <link href={% static "./img/logo.png"%} rel="shortcut icon" />
         {% if home_page_information %}
             <title>{{home_page_information.title}}</title>
         {% else %} 
@@ -36,7 +32,7 @@
                 <div class="container">
                     
                     <button class="navbar-toggler nav-icon mt-1" type="button" data-toggle="collapse" data-target="#navbarResponsive">     
-                        <i class="fas fa-bars"></i>
+                        <i class="fas ">منو</i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -123,7 +119,7 @@
                         </ul>
                         <form class="form-inline " action="{% url 'courses' %}">
                             <input id="input-search" name="q" class="form-control mr-sm-2 pt-1 pb-1 " type="text" placeholder="جوینده یابنده است...">
-                            <button id="button-search" class="mr-1 ml-1 p-2 pr-3 pl-3" type="submit"> <i class="fas fa-search"></i></button>
+                            <button id="button-search" class="mr-1 ml-1 p-2 pr-3 pl-3" type="submit"> <i class="fas ">بیاب</i></button>
                         </form>
                     </div>
                     
