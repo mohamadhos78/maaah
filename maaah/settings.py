@@ -24,8 +24,10 @@ SECRET_KEY = 'django-insecure-=pktw!j!mnl#4v4n98=7ax&(7#*a*b^(1b8(8@#-xlig=*^w=u
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-ALLOWED_HOSTS = ["maaah.pythonanywhere.com", 'localhost', '127.0.0.1']
+if DEBUG:
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+else:
+    ALLOWED_HOSTS = ["maaah.ir", 'www.maaah.ir', '185.164.73.66']
 
 
 # Application definition
@@ -121,9 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = [
-    BASE_DIR / "maaah/static",
-]
+if DEBUG:
+    STATICFILES_DIRS = [
+        BASE_DIR / "maaah/static",
+    ]
 
 # Media Files
 MEDIA_URL = '/media/'
@@ -133,11 +136,6 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-if DEBUG: 
-   STATIC_ROOT = os.path.join(BASE_DIR, '/static')
-else:
-   STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 
 # Messges
 from django.contrib.messages import constants as messages
