@@ -21,6 +21,7 @@
         {% else %} 
             <title>موسسه فرهنگی هنری ماه</title>
         {% endif %}
+        <meta name="keyword" content="حاج آقاراضی،کلاس های،عشقولوژی،موسسه،ماه،ویژه،دختران،دهه،هشتادی"/>
     </head>
     
     <body>
@@ -31,9 +32,11 @@
 
                 <div class="container">
                     
-                    <button class="navbar-toggler nav-icon mt-1" type="button" data-toggle="collapse" data-target="#navbarResponsive">     
-                        <i class="fas ">منو</i>
-                    </button>
+                    <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                      
+                        <img  class="mr-0" src=/static/img/icon-menu.png alt="منو" style="width:2.5rem ;"  />
+                       
+                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                     
@@ -97,7 +100,7 @@
                                     <div class="modal-dialog">
                                     <div class="modal-content ">
                                         <div class="modal-header">
-                                        <p class="text-black"> 
+                                        <p class="text-black-maaah"> 
                                             موسسه فرهنگی هنری ماه : <br>
                                             محفلی برای دختران نوجوان ایرانی
                                             <br>
@@ -119,7 +122,9 @@
                         </ul>
                         <form class="form-inline " action="{% url 'courses' %}">
                             <input id="input-search" name="q" class="form-control mr-sm-2 pt-1 pb-1 " type="text" placeholder="جوینده یابنده است...">
-                            <button id="button-search" class="mr-1 ml-1 p-2 pr-3 pl-3" type="submit"> <i class="fas ">بیاب</i></button>
+                            <button id="button-search" class="mx-1 " type="submit"> 
+                                <img class="p-1" src=/static/img/icon-search.png alt="بیاب"  />
+                              </button>
                         </form>
                     </div>
                     

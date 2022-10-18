@@ -34,7 +34,7 @@
       background-color: #709acc;
       border: 1px solid #444440;
       transition: all 0.4s;
-     
+      width: 2.5rem;
   }
   #button-search:hover{
     transform: translateY(-3px);
@@ -381,9 +381,9 @@
   } 
     #mainNav .navbar-toggler {
       font-size: 60%;
-      padding: 0.75rem;
+ 
       color: #e5ecec;
-      border: 2px solid #eaebeb;
+     
     }
     
     #mainNav .navbar-brand {
@@ -474,6 +474,9 @@
       font-size: small;
       color: #fcf117;
     }
+    .text-black-maaah{
+      color: black;
+    }
     @media only screen and (max-width:661px) {
      
       .image-report {
@@ -492,6 +495,7 @@
       background-color: #fcfeff;
       border:3px solid #166380; 
       box-shadow: 6px 5px 3px black;
+ 
     }
     .news{
       background-color: #002856;

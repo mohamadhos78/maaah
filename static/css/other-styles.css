@@ -199,7 +199,17 @@ border-radius:30%;
 button>a{
   text-decoration: none;
 }
-
+audio{
+  border-radius: 5px;
+  background: #002856;
+}
+.video{
+  border-radius: 20px;
+  background: #0062cc1f;
+ }
+ .media-box{
+  border: none;
+ }
 @media (max-width: 991px) {
 
  .main1{
@@ -213,11 +223,13 @@ button>a{
     width: 80%;
     height: 80%;
     border-radius: 20px;
- 
    }
-   audio{
+   .audio-courses{
     width: 80%;
     height: 80%;
-    border-radius: 20px;
+  }
+  .audio-landing{
+    width: 100%;
+   
   }
 }
